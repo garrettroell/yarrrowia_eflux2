@@ -1,0 +1,41 @@
+pathway,compartment,13C_mfa_reaction,reaction_ids,13C_mfa_flux,13C_mfa_flux_95%_lower_bound,13C_mfa_flux_95%_upper_bound,Forward Flux,Backward Flux,Stdev,pFBA Flux
+substrate_uptake,cytosol,Glucose(substrate) + ATP == G6P,GLCt1,0,,,[],[],,0.0
+substrate_uptake,cytosol,Glycerol(substrate) == GLYC,GLYCt,100,,,[],[],,-100.0
+substrate_uptake,cytosol,Acetate(substrate) == AC,ACt2r,0,,,[],[],,0.0
+emp,cytosol,G6P == F6P,PGI,6,,,420.0208,426.1404,,-27.963947640816283
+emp,cytosol,F6P + ATP == FBP,PFK or reverse_FBP,9,,,0,8.679,,-18.67003321880128
+emp,cytosol,FBP == DHAP + GAP,FBA,9,,,14.8765,23.5555,,-18.67003321880128
+emp,cytosol,DHAP == GAP,TPI,90,,,398.4248,307.9967,,80.86985427430733
+emp,cytosol,GAP == G3P + ATP + NADH,GAPD,80,,,79.8354,0.01,,69.14086168077496
+emp,cytosol,G3P == PEP,ENO,74,,,1.00E+06,999900,,39.78098477563121
+emp,cytosol,PEP == PYRcyt + ATP,PYK,70,,,1.00E+06,999900,,38.604114018678025
+pentose_phosphate,cytosol,G6P == PG6 + NADPH,G6PDH2,2,,,[],[],,23.115958392011194
+transport,extracellular,GLYC == GLYC_EX,EX_glyc(e),0,,,[],[],,-100.0
+transport,mitochondria,PYRcyt == PYRmit,PYRt2m,56,,,[],[],,19.546866162663832
+tca_cycle,mitochondria,PYRmit == ACCOAmit + CO2 + NADH,PDHm,44,,,[],[],,12.536617670166466
+tca_cycle,mitochondria,ACCOAmit + OAAmit == CITmit,CSm,24,,,[],[],,5.112126000201435
+tca_cycle,mitochondria,CITmit == ICTmit,ACONTm,24,,,314.5715,290.625,,0.6978707475594784
+transport,mitochondria,ICTmit == ICTcyt,CITtcm,3,,,[],[],,0.0
+tca_cycle,mitochondria,ICTmit == AKG + CO2 + NADH,ICDHxm,0,,,,[],,0.0
+tca_cycle,mitochondria,ICTmit == AKG + CO2 + NADPH,ICDHym,21,,,[],[],,0.6978707475594783
+tca_cycle,mitochondria,SUCmit == FUMmit + UQH2,SUCD2_u6m and SUCD1m,16,,,730.3721,714.3322,,0.0
+tca_cycle,mitochondria,FUMmit == MALmit,FUMm,18,,,1.00E+06,999900,,0.0
+tca_cycle,mitochondria,MALmit == OAAmit + NADH,MDHm,18,,,1.00E+06,999900,,0.0
+anaplerotic,mitochondria,MALmit == PYRmit + CO2 + NADH,ME1m,0,,,,[],,0.0
+anaplerotic,mitochondria,MALmit == PYRmit + CO2 + NADPH,ME2m,0,,,[],[],,7.30685134312897
+anaplerotic,cytosol,PYRcyt + CO2 + ATP == OAAcyt,PC,18,,,[],[],,16.415122164447382
+anaplerotic,cytosol,OAAcyt + ATP == PEP + CO2,PPCK,0,,,[],[],,0.0
+acetate_metabolism ,cytosol,PYRcyt == AA + CO2,PYRDC,0,,,[],[],,0.0
+acetate_metabolism ,cytosol,AA + NADH == ETOH,reverse_ALCD2x,2,,,[],[],,0.0
+acetate_metabolism ,cytosol,AA == AC + NADH,ALDD2y,0,,,,[],,0.0
+acetate_metabolism ,cytosol,AC + ATP == ACCOAcyt,ACS or reverse_ACOAH,1,,,135.2017,134.0824,,0.22351458299074906
+transport,extracellular,ETOH == ETOH_EX,rETOHt or reverse_ETOHt,2,,,[],[],,0.0
+transport,extracellular,AC == AC_EX,reverse_ACt2r,0,,,[],[],,0.0
+transport,mitochondria,OAAmit == OAAcyt,reverse_OAAt2m,7,,,111.6402,118.1634,,-5.112126000201436
+glyoxylate_shunt,cytosol,ICTcyt == GLYOXYcyt + SUCcyt,ICL,4,,,[],[],,0.0
+transport,mitochondria,SUCcyt == SUCmit,SUCCtm,4,,,[],[],,0.0
+tca_cycle,cytosol,MALcyt == OAAcyt + NADH,MDH,0,,,0,0,,11.133993694371103
+transport,mitochondria,MALcyt == MALmit,MALtm or reverse_CITtam or reverse_DICtm,0,,,[],[],,7.3068513431289706
+transport,extracellular,CO2 == CO2_EX,reverse_CO2t,77,,,[],[],,39.237883656248904
+biomass_formation,cytosol,0.459*ALA+0.161*ARG+0.102*ASN+0.42*ASP+0.007*CYS+0.105*GLN+0.302*GLU+0.398*GLY+0.066*HIS+0.193*ILE+0.296*LEU+0.286*LYS+0.051*MET+0.134*PHE+0.165*PRO+0.185*SER+0.191*THR+0.028*TRP+0.102*TYR+0.265*VAL+1.7*G6P+0.808*F6P+0.4623*ACCOAcyt+0.231*P5P+0.216*MTHF == Biomass,biomass_C,8,,,[],[],,4.669846530456216
+energy_metabolism,extracellular,ATP == ATP_EX,ATPM,731,,,[],[],,0.0
