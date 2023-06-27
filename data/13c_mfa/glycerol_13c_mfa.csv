@@ -1,7 +1,8 @@
 pathway,compartment,13C_mfa_reaction,reaction_ids,13C_mfa_flux,13C_mfa_flux_95%_lower_bound,13C_mfa_flux_95%_upper_bound,Forward Flux,Backward Flux,Stdev
 substrate_uptake,cytosol,Glucose(substrate) + ATP == G6P,GLCt1,0,,,[],[],
-substrate_uptake,cytosol,Glycerol(substrate) == GLYC,GLYCt,100,,,[],[],
+substrate_uptake,cytosol,Glycerol(substrate) == GLYC,reverse_GLYCt,100,,,[],[],
 substrate_uptake,cytosol,Acetate(substrate) == AC,ACt2r,0,,,[],[],
+substrate_uptake,cytosol,oleic_acid(substrate) == AC,OCDCEAt,0,,,[],[],
 emp,cytosol,G6P == F6P,PGI,6,,,420.0208,426.1404,
 emp,cytosol,F6P + ATP == FBP,PFK or reverse_FBP,9,,,0,8.679,
 emp,cytosol,FBP == DHAP + GAP,FBA,9,,,14.8765,23.5555,
