@@ -10,8 +10,8 @@ NADH2_u6cm,NADH dehydrogenase cytosolicmitochondrial,h[c] + nadh[c] + q6[m] --> 
 GLUDy,glutamate dehydrogenase NADP ,glu_L[c] + h2o[c] + nadp[c] <=> akg[c] + h[c] + nadph[c] + nh4[c],-187.0197015191336
 EX_co2(e),CO2 exchange,co2[e] --> ,184.30125176523913
 CO2t,CO2 transporter via diffusion,co2[e] <=> co2[c],-184.30125176523913
-O2t,o2 transport diffusion ,o2[e] <=> o2[c],164.2522568890502
 EX_o2(e),O2 exchange,o2[e] <=> ,-164.2522568890502
+O2t,o2 transport diffusion ,o2[e] <=> o2[c],164.2522568890502
 CYOOm,cytochrome c oxidase mitochondrial,4.0 focytc[m] + 6.0 h[m] + o2[m] --> 4.0 ficytc[m] + 2.0 h2o[m] + 6.0 h[c],158.3190010882781
 O2tm,O2 transport diffusion ,o2[c] <=> o2[m],158.31900108827807
 GLUDxi,glutamate dehydrogenase NAD ,glu_L[c] + h2o[c] + nad[c] --> akg[c] + h[c] + nadh[c] + nh4[c],135.9647863268477
@@ -121,13 +121,13 @@ SACCD2,saccharopine dehydrogenase NAD L lysine forming ,h2o[c] + nad[c] + saccrp
 MTHFD2,methylenetetrahydrofolate dehydrogenase NAD ,mlthf[c] + nad[c] --> methf[c] + nadh[c],2.7719513266303553
 MTHFC,methenyltetrahydrofolate cyclohydrolase,h2o[c] + methf[c] <=> 10fthf[c] + h[c],2.7719513266303544
 CBPS,carbamoyl phosphate synthase glutamine hydrolysing ,2.0 atp[c] + gln_L[c] + h2o[c] + hco3[c] --> 2.0 adp[c] + cbp[c] + glu_L[c] + 2.0 h[c] + pi[c],2.7323436489319697
+DOLPMMer,Dolichyl phosphate mannose protein mannosyltransferase endoplasmic reticular,dolmanp[r] --> dolp[r] + h[r] + mannan[r],2.450959601192373
+MANNANter,mannan endoplasmic reticulum transport via diffusion,mannan[c] <=> mannan[r],-2.450959601192373
 DOLPt2er,dolichol phosphate endoplasmic reticular transport via proton symport,dolp[c] + h[c] <=> dolp[r] + h[r],-2.450959601192373
 MAN1PT,mannose 1 phosphate guanylyltransferase,gtp[c] + h[c] + man1p[c] --> gdpmann[c] + ppi[c],2.450959601192373
-DOLPMMer,Dolichyl phosphate mannose protein mannosyltransferase endoplasmic reticular,dolmanp[r] --> dolp[r] + h[r] + mannan[r],2.450959601192373
 DOLPMTcer,Dolichyl phosphate D mannosyltransferase,dolp[c] + gdpmann[c] --> dolmanp[r] + gdp[c],2.450959601192373
-MANNANter,mannan endoplasmic reticulum transport via diffusion,mannan[c] <=> mannan[r],-2.450959601192373
-MAN6PI,mannose 6 phosphate isomerase,man6p[c] <=> f6p[c],-2.4509596011923724
 PMANM,phosphomannomutase,man1p[c] <=> man6p[c],-2.4509596011923724
+MAN6PI,mannose 6 phosphate isomerase,man6p[c] <=> f6p[c],-2.4509596011923724
 PMEVK,phosphomevalonate kinase,5pmev[c] + atp[c] --> 5dpmev[c] + adp[c],2.386849314272754
 HMGCOAR,Hydroxymethylglutaryl CoA reductase,coa[c] + mev_R[c] + 2.0 nadp[c] <=> 2.0 h[c] + hmgcoa[c] + 2.0 nadph[c],-2.3868493142727534
 DPMVD,diphosphomevalonate decarboxylase,5dpmev[c] + atp[c] --> adp[c] + co2[c] + ipdp[c] + pi[c],2.3868493142727534
@@ -163,9 +163,9 @@ AHCi,adenosylhomocysteinase,ahcys[c] + h2o[c] --> adn[c] + hcys_L[c],1.446535637
 ASPCTn,aspartate carbamoyltransferase nuclear,asp_L[n] + cbp[n] --> cbasp[n] + h[n] + pi[n],1.4274853687583011
 PIt2n,phosphate nuclear transport via proton symport,h[c] + pi[c] <=> h[n] + pi[n],-1.4274853687583011
 ASPt2n,aspartate nuclear transport via proton symport,asp_L[c] + h[c] <=> asp_L[n] + h[n],1.427485368758301
+ORPT,orotate phosphoribosyltransferase,orot5p[c] + ppi[c] <=> orot[c] + prpp[c],-1.427485368758301
 OMPDC,orotidine 5 phosphate decarboxylase,h[c] + orot5p[c] --> co2[c] + ump[c],1.427485368758301
 CBPtn,carbamoyl phosphate nuclear transport via diffusion,cbp[c] <=> cbp[n],1.427485368758301
-ORPT,orotate phosphoribosyltransferase,orot5p[c] + ppi[c] <=> orot[c] + prpp[c],-1.427485368758301
 DHORTSn,dihydroorotase nuclear,dhor_S[n] + h2o[n] <=> cbasp[n] + h[n],-1.4274853687583005
 DHORD4,dihydoorotic acid ubiquinone 6 ,dhor_S[c] + q6[m] <=> orot[c] + q6h2[m],1.4274853687583005
 DHORtn, S Dihydrooroate nuclear transport,dhor_S[c] <=> dhor_S[n],-1.4274853687583002
@@ -270,8 +270,8 @@ CHLSTI,cholestenol delta isomerase lumped reaction,amet[c] + o2[c] + zymst[c] --
 ERGTETROLter,Ergosta 5 6 22 24 28 tetraen 3beta ol endoplamic reticular transport,ergtetrol[c] <=> ergtetrol[r],0.3663276630293323
 ERGSTter,ergosterol endoplasmic reticular transport,ergst[r] <=> ergst[c],0.3663276630293322
 C24STRer,C s24 sterol reductase endoplamic reticular,ergtetrol[r] + h[r] + nadph[r] --> ergst[r] + nadp[r],0.3663276630293322
-PETOHM_SC,phosphatidylethanolamine N methyltransferase yeast specific,amet[c] + 0.01 pe_SC[c] --> ahcys[c] + h[c] + 0.01 ptdmeeta_SC[c],0.3600693248893596
 PMETM_SC,Phosphatidyl N methylethanolamine N methyltransferase yeast specific,amet[c] + 0.01 ptd2meeta_SC[c] --> ahcys[c] + h[c] + 0.01 pc_SC[c],0.3600693248893596
+PETOHM_SC,phosphatidylethanolamine N methyltransferase yeast specific,amet[c] + 0.01 pe_SC[c] --> ahcys[c] + h[c] + 0.01 ptdmeeta_SC[c],0.3600693248893596
 MFAPS_SC,methylene fatty acyl phospholipid synthase yeast specific,amet[c] + 0.01 ptdmeeta_SC[c] --> ahcys[c] + h[c] + 0.01 ptd2meeta_SC[c],0.36006932488935955
 DESAT16,Palmitoyl CoA desaturase n C160CoA n C161CoA ,h[c] + nadph[c] + o2[c] + pmtcoa[c] --> 2.0 h2o[c] + hdcoa[c] + nadp[c],0.3568079784031961
 DESAT18_2,Oleoyl CoA desaturase n C181CoA n C182CoA ,h[c] + nadph[c] + o2[c] + odecoa[c] --> 2.0 h2o[c] + nadp[c] + ocdycacoa[c],0.3510636437690154

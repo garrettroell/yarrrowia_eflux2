@@ -1,89 +1,82 @@
-pathway,compartment,13C_mfa_reaction,reaction_ids,13C_mfa_flux,13C_mfa_flux_95%_lower_bound,13C_mfa_flux_95%_upper_bound,Forward Flux,Backward Flux,Stdev
-substrate_uptake,cytosol,Glucose(substrate) + ATP == G6P,GLCt1,0,,,[],[],
-substrate_uptake,cytosol,Glycerol(substrate) == GLYC,reverse_GLYCt,100,,,[],[],
-substrate_uptake,cytosol,Acetate(substrate) == AC,ACt2r,0,,,[],[],
-substrate_uptake,cytosol,oleic_acid(substrate) == AC,OCDCEAt,0,,,[],[],
-emp,cytosol,G6P == F6P,PGI,6,,,420.0208,426.1404,
-emp,cytosol,F6P + ATP == FBP,PFK or reverse_FBP,9,,,0,8.679,
-emp,cytosol,FBP == DHAP + GAP,FBA,9,,,14.8765,23.5555,
-emp,cytosol,DHAP == GAP,TPI,90,,,398.4248,307.9967,
-emp,cytosol,GAP == G3P + ATP + NADH,GAPD,80,,,79.8354,0.01,
-emp,cytosol,G3P == PEP,ENO,74,,,1.00E+06,999900,
-emp,cytosol,PEP == PYRcyt + ATP,PYK,70,,,1.00E+06,999900,
-pentose_phosphate,cytosol,G6P == PG6 + NADPH,G6PDH2,2,,,[],[],
-pentose_phosphate,cytosol,PG6 == P5P + CO2 + NADPH,,2,,,[],[],
-pentose_phosphate,cytosol,P5P + P5P == S7P + GAP,,0,,,6.1193,5.8761,
-pentose_phosphate,cytosol,S7P + GAP == E4P + F6P,,0,,,49.9662,49.723,
-pentose_phosphate,cytosol,E4P + P5P == F6P + GAP,,2,,,91.5709,93.7674,
-glycerol_formation,cytosol,DHAP + NADH == GLYC,,100,,,201.8412,300.9483,
-transport,extracellular,GLYC == GLYC_EX,EX_glyc(e),0,,,[],[],
-transport,mitochondria,PYRcyt == PYRmit,PYRt2m,56,,,[],[],
-tca_cycle,mitochondria,PYRmit == ACCOAmit + CO2 + NADH,PDHm,44,,,[],[],
-tca_cycle,mitochondria,ACCOAmit + OAAmit == CITmit,CSm,24,,,[],[],
-tca_cycle,mitochondria,CITmit == ICTmit,ACONTm,24,,,314.5715,290.625,
-transport,mitochondria,ICTmit == ICTcyt,CITtcm,3,,,[],[],
-tca_cycle,mitochondria,ICTmit == AKG + CO2 + NADH,ICDHxm,0,,,,[],
-tca_cycle,mitochondria,ICTmit == AKG + CO2 + NADPH,ICDHym,21,,,[],[],
-tca_cycle,mitochondria,AKG == SUCmit + CO2 + ATP + NADH,,13,,,[],[],
-tca_cycle,mitochondria,SUCmit == FUMmit + UQH2,SUCD2_u6m and SUCD1m,16,,,730.3721,714.3322,
-tca_cycle,mitochondria,FUMmit == MALmit,FUMm,18,,,1.00E+06,999900,
-tca_cycle,mitochondria,MALmit == OAAmit + NADH,MDHm,18,,,1.00E+06,999900,
-anaplerotic,mitochondria,MALmit == PYRmit + CO2 + NADH,ME1m,0,,,,[],
-anaplerotic,mitochondria,MALmit == PYRmit + CO2 + NADPH,ME2m,0,,,[],[],
-anaplerotic,cytosol,PYRcyt + CO2 + ATP == OAAcyt,PC,18,,,[],[],
-anaplerotic,cytosol,OAAcyt + ATP == PEP + CO2,PPCK,0,,,[],[],
-acetate_metabolism ,cytosol,PYRcyt == AA + CO2,PYRDC,0,,,[],[],
-acetate_metabolism ,cytosol,AA + NADH == ETOH,reverse_ALCD2x,2,,,[],[],
-acetate_metabolism ,cytosol,AA == AC + NADH,ALDD2y,0,,,,[],
-acetate_metabolism ,cytosol,AA == AC + NADPH,,0,,,[],[],
-acetate_metabolism ,cytosol,AC + ATP == ACCOAcyt,ACS or reverse_ACOAH,1,,,135.2017,134.0824,
-transport,extracellular,ETOH == ETOH_EX,rETOHt or reverse_ETOHt,2,,,[],[],
-transport,extracellular,AC == AC_EX,reverse_ACt2r,0,,,[],[],
-transport,mitochondria,OAAmit == OAAcyt,reverse_OAAt2m,7,,,111.6402,118.1634,
-tca_cycle,cytosol,ACCOAcyt + OAAcyt == ICTcyt,,0,,,[],[],
-transport,mitochondria,ACCOAcyt == ACCOAmit,,17,,,1.02E+03,1.04E+03,
-glyoxylate_shunt,cytosol,ICTcyt == GLYOXYcyt + SUCcyt,ICL,4,,,[],[],
-transport,mitochondria,SUCcyt == SUCmit,SUCCtm,4,,,[],[],
-glyoxylate_shunt,cytosol,ACCOAcyt + GLYOXYcyt == MALcyt,,4,,,[],[],
-tca_cycle,cytosol,MALcyt == OAAcyt + NADH,MDH,0,,,0,0,
-transport,mitochondria,MALcyt == MALmit,MALtm or reverse_CITtam or reverse_DICtm,0,,,[],[],
-amino_acid_formation,cytosol,G3P == SER + NADH,,5,,,[],[],
-amino_acid_formation,cytosol,GLYOXYcyt == GLY,,0,,,[],[],
-amino_acid_formation,cytosol,SER == GLY + MTHF,,3,,,3.1568,0.1201,
-amino_acid_formation,cytosol,CO2 + MTHF == GLY,,-2,,,0,1.8048,
-amino_acid_formation,cytosol,AKG == GLU,,30,,,[],[],
-amino_acid_formation,cytosol,GLU == GLN,,6,,,[],[],
-amino_acid_formation,cytosol,GLU == PRO,,1,,,[],[],
-amino_acid_formation,cytosol,GLU + GLU + CO2 + GLN + ASP == AKG + ARG + GLU + FUMmit,,1,,,[],[],
-amino_acid_formation,cytosol,OAAcyt + GLU == ASP + AKG,,11,,,[],[],
-amino_acid_formation,cytosol,OAAmit + GLU == ASP + AKG,,0,,,[],[],
-amino_acid_formation,cytosol,ASP + GLN == ASN + GLU,,1,,,[],[],
-amino_acid_formation,cytosol,PYRcyt + GLU == ALA + AKG,,0,,,[],[],
-amino_acid_formation,cytosol,PYRmit + GLU == ALA + AKG,,2,,,[],[],
-amino_acid_formation,cytosol,ASP == THR,,4,,,[],[],
-amino_acid_formation,cytosol,THR == GLY + AA,,2,,,1.7835,0,
-amino_acid_formation,cytosol,SER + ACCOAcyt == CYS + AC,,0,,,[],[],
-amino_acid_formation,cytosol,ASP + MTHF + ACCOAcyt == MET + AC,,1,,,[],[],
-amino_acid_formation,cytosol,AKG + ACCOAcyt + GLU + GLU == LYS + CO2 + AKG + AKG,,2,,,[],[],
-amino_acid_formation,cytosol,AKG + ACCOAmit + GLU + GLU == LYS + CO2 + AKG + AKG,,0,,,[],[],
-amino_acid_formation,cytosol,PYRmit + PYRmit + GLU == VAL + CO2 + AKG,,2,,,[],[],
-amino_acid_formation,cytosol,PYRcyt + PYRcyt + GLU == VAL + CO2 + AKG,,0,,,[],[],
-amino_acid_formation,cytosol,PEP + PEP + E4P + GLU == PHE + CO2 + AKG,,1,,,[],[],
-amino_acid_formation,cytosol,PEP + PEP + E4P + GLU == TYR + CO2 + AKG,,1,,,[],[],
-amino_acid_formation,cytosol,SER + P5P + PEP + E4P + PEP + GLN == TRP + CO2 + GAP + PYRcyt + GLU,,0,,,[],[],
-amino_acid_formation,cytosol,P5P + MTHF + GLN + ASP == HIS + AKG + FUMmit,,1,,,[],[],
-amino_acid_formation,cytosol,PYRcyt + OAAcyt == ILE + CO2,,0,,,[],[],
-amino_acid_formation,cytosol,PYRmit + OAAmit == ILE + CO2,,1,,,[],[],
-amino_acid_formation,cytosol,PYRcyt + THR == ILE + CO2,,0,,,[],[],
-amino_acid_formation,cytosol,PYRmit + THR == ILE + CO2,,1,,,[],[],
-amino_acid_formation,cytosol,PYRcyt + PYRcyt == ISVb + CO2,,0,,,[],[],
-amino_acid_formation,cytosol,PYRmit + PYRmit == ISVb + CO2,,2,,,[],[],
-amino_acid_formation,cytosol,ISVb + ACCOAmit == LEU + CO2,,2,,,[],[],
-amino_acid_formation,cytosol,ISVb + ACCOAcyt == LEU + CO2,,0,,,[],[],
-transport,extracellular,CO2 == CO2_EX,reverse_CO2t,77,,,[],[],
-transport,cytosol,CO2_unlabeled + CO2 == CO2 + CO2_out,,4,,,[],[],
-biomass_formation,cytosol,0.459*ALA+0.161*ARG+0.102*ASN+0.42*ASP+0.007*CYS+0.105*GLN+0.302*GLU+0.398*GLY+0.066*HIS+0.193*ILE+0.296*LEU+0.286*LYS+0.051*MET+0.134*PHE+0.165*PRO+0.185*SER+0.191*THR+0.028*TRP+0.102*TYR+0.265*VAL+1.7*G6P+0.808*F6P+0.4623*ACCOAcyt+0.231*P5P+0.216*MTHF == Biomass,biomass_C,8,,,[],[],
-energy_metabolism,extracellular,ATP == ATP_EX,ATPM,731,,,[],[],
-energy_metabolism,extracellular,NADH == NADPH,,-25,,,[],[],
-energy_metabolism,extracellular,NADH == 2*ATP,,282,,,[],[],
-energy_metabolism,extracellular,UQH2 == ATP,,16,,,[],[],
+pathway,compartment,Equation,reaction_ids,13C_mfa_flux,StdErr,13C_mfa_flux_95%_lower_bound,13C_mfa_flux_95%_upper_bound
+substrate_uptake,cytosol,Glycerol -> GLYC,reverse_GLYCt,100,4.76E-09,100,100
+emp,cytosol,GLYC + ATP -> Glyc3P,,0.0000001,2.72E-09,2.63E-15,3.9901
+emp,cytosol,Glyc3P <-> DHAP + UQH2,,0.0000001,2.72E-09,0,3.9901
+emp,cytosol,G6P <-> F6P,PGI,-9.0944,39.1598,-21.4029,0
+emp,cytosol,F6P + ATP <-> FBP,PFK or reverse_FBP,-5.3368,12.8241,-9.3768,-2.2568
+emp,cytosol,FBP <-> DHAP + GAP,FBA,-5.3368,12.8241,-9.3768,-2.2568
+emp,cytosol,DHAP <-> GAP,TPI,94.6632,12.8241,90.5337,97.7431
+emp,cytosol,GAP <-> G3P + ATP + NADH,GAPD,89.8064,12.3415,85.8134,92.99
+emp,cytosol,G3P <-> PEP,ENO,85.1174,11.8431,81.1338,88.5232
+emp,cytosol,PEP <-> PYRcyt + ATP,PYK,77.9105,11.1289,73.9732,606.6294
+pentose_phosphate,cytosol,G6P -> PG6 + NADPH,G6PDH2,9.0944,39.1598,0,21.4029
+pentose_phosphate,cytosol,PG6 -> P5P + CO2 + NADPH,GND,9.0944,39.1598,0,21.4029
+pentose_phosphate,cytosol,P5P + P5P <-> S7P + GAP,TKT1,3.6805,12.9887,0.6353,7.7666
+pentose_phosphate,cytosol,S7P + GAP <-> E4P + F6P,TALA,3.6805,12.9887,0.6353,7.7666
+pentose_phosphate,cytosol,E4P + P5P <-> F6P + GAP,TKT2,0.0771,13.3471,-3.1986,4.2627
+glycerol_formation,cytosol,DHAP + NADH <-> GLYC,G3PD1ir,-100,2.54E-09,-100,-96.0098
+transport,mitochondria,PYRcyt -> PYRmit,PYRt2m,8.42E-07,7.29E-10,0,31.464
+tca_cycle,mitochondria,PYRmit -> ACCOAmit + CO2 + NADH,PDHm,8.16E-07,4.06E-10,0,35.0973
+tca_cycle,mitochondria,ACCOAmit + OAAmit -> CITmit,CSm,30.8644,6.5241,19.4142,35.2491
+tca_cycle,mitochondria,CITmit <-> ICTmit,ACONTm,30.8644,6.5241,19.4142,35.2491
+transport,mitochondria,ICTmit -> ICTcyt,CITtcm,0.0873,1.1553,0,6.7951
+tca_cycle,mitochondria,ICTmit -> AKG + CO2 + NADH,ICDHxm,30.6316,203060,0,35.527
+tca_cycle,mitochondria,ICTmit -> AKG + CO2 + NADPH,ICDHym,0.1455,203060,0,33.5477
+tca_cycle,mitochondria,AKG -> 0.5*SUCmit + 0.5*SUCmit + CO2 + ATP + NADH,,18.7358,5.2185,6.5711,23.9538
+tca_cycle,mitochondria,SUCmit <-> FUMmit + UQH2,SUCD2_u6m and SUCD1m,18.8231,5.3808,12.7084,23.9594
+tca_cycle,mitochondria,0.5*FUMmit + 0.5*FUMmit <-> 0.5*MALmit + 0.5*MALmit,FUMm,20.0765,5.4984,14.0376,25.1708
+tca_cycle,mitochondria,MALmit <-> OAAmit + NADH,MDHm,19.5073,5.4889,12.9259,41.8233
+anaplerotic,mitochondria,MALmit <-> PYRmit + CO2 + NADH,ME1m,7.36E-09,416030,-34.0255,10.0771
+anaplerotic,mitochondria,MALmit <-> PYRmit + CO2 + NADPH,ME2m,0.5691,416030,-34.4039,10.2675
+anaplerotic,cytosol,PYRcyt + CO2 + ATP -> OAAcyt,PC,26.0415,2.7621,0,605.6479
+anaplerotic,cytosol,OAAcyt + ATP -> PEP + CO2,PPCK,8.39E-07,9.23E-13,0,655.6776
+acetate_metabolism ,cytosol,PYRcyt -> AA + CO2,PYRDC,35.6856,7.4602,1.1198,39.9438
+acetate_metabolism ,cytosol,AA + NADH <-> ETOH,reverse_ALCD2x,0,0,0,0
+acetate_metabolism ,cytosol,AA -> AC + NADH,ALDD2y,37.2766,244090,0,41.6788
+acetate_metabolism ,cytosol,AA -> AC + NADPH,,0.00014139,244090,0,41.6783
+acetate_metabolism ,cytosol,AC + ATP <-> ACCOAcyt,ACS or reverse_ACOAH,38.933,7.3024,4.8364,43.4363
+transport,mitochondria,OAAmit <-> OAAcyt,reverse_OAAt2m,-11.3571,1.6235,-34.9196,22.1414
+tca_cycle,cytosol,ACCOAcyt + OAAcyt -> ICTcyt,,7.88E-07,0,0,6.6882
+transport,mitochondria,ACCOAcyt <-> ACCOAmit,,31.0367,146660,-3.919,35.4578
+glyoxylate_shunt,cytosol,0.5*ICTcyt + 0.5*ICTcyt -> 0.5*GLYOXYcyt + 0.5*GLYOXYcyt + 0.5*SUCcyt + 0.5*SUCcyt,ICL,0.0873,1.1553,NaN,6.7907
+transport,mitochondria,SUCcyt -> SUCmit,SUCCtm,0.0873,1.1553,NaN,6.7907
+glyoxylate_shunt,cytosol,ACCOAcyt + GLYOXYcyt -> MALcyt,MALSp,7.67E-07,2.25E-09,0,6.1803
+tca_cycle,cytosol,MALcyt -> OAAcyt + NADH,MDH,0.0000001,3.96E-11,0,6.1917
+transport,mitochondria,MALcyt -> MALmit,MALtm or reverse_CITtam or reverse_DICtm,6.67E-07,2.24E-09,0,6.1197
+amino_acid_formation,cytosol,G3P -> SER + NADH,,4.689,0.5579,4.281,5.4106
+amino_acid_formation,cytosol,GLYOXYcyt -> GLY,,0.0873,1.1553,0,1.3335
+amino_acid_formation,cytosol,SER <-> GLY + MTHF,,1.6115,0.3057,1.2148,2.137
+amino_acid_formation,cytosol,CO2 + MTHF + NADH <-> GLY,,-0.8952,0.2399,-1.3586,-0.452
+amino_acid_formation,cytosol,AKG + NADPH -> GLU,,47.0818,4.4695,45.4113,50.9434
+amino_acid_formation,cytosol,GLU + ATP -> GLN,,8.4714,0.8519,8.142,9.194
+amino_acid_formation,cytosol,GLU + ATP + 2*NADPH -> PRO,,1.9024,0.1913,1.8284,2.0647
+amino_acid_formation,cytosol,GLU + GLU + CO2 + GLN + ASP + 5*ATP + NADPH -> AKG + ARG + GLU + FUM,,1.9472,0.1958,1.8715,2.1133
+amino_acid_formation,cytosol,OAAcyt + GLU -> ASP + AKG,,14.6844,1.6334,0,16.3908
+amino_acid_formation,cytosol,OAAmit + GLU -> ASP + AKG,,0.0000001,7.61E-10,0,16.3907
+amino_acid_formation,cytosol,ASP + GLN -> ASN + GLU,,2.1934,0.2206,2.1081,2.3805
+amino_acid_formation,cytosol,PYRcyt + GLU -> ALA + AKG,,2.7452,1.0987,0,3.2927
+amino_acid_formation,cytosol,PYRmit + GLU -> ALA + AKG,,0.5449,1.035,0.1191,3.5707
+amino_acid_formation,cytosol,ASP + 2*ATP + 2*NADPH -> THR,,5.8437,1.2772,4.175,7.0655
+amino_acid_formation,cytosol,THR <-> GLY + AA + NADH,,1.5912,1.3021,-0.0188,2.6
+amino_acid_formation,cytosol,SER + ACCOAcyt + 3*ATP + 4*NADPH -> CYS + AC,,0.4029,0.0405,0.3872,0.4372
+amino_acid_formation,cytosol,ASP + MTHF + ACCOAcyt + 2*NADPH -> MET + AC,,1.2534,0.126,1.2046,1.3603
+amino_acid_formation,cytosol,AKG + ACCOAcyt + GLU + GLU -> LYS + CO2 + AKG + AKG,,2.6823,146660,0,3.0849
+amino_acid_formation,cytosol,AKG + ACCOAmit + GLU + GLU -> LYS + CO2 + AKG + AKG,,0.1602,146660,0,0.5305
+amino_acid_formation,cytosol,PYRmit + PYRmit + GLU + NADPH -> VAL + CO2 + AKG,,0.0000001,9.13E-11,0,1.4843
+amino_acid_formation,cytosol,PYRcyt + PYRcyt + GLU + NADPH -> VAL + CO2 + AKG,,2.4732,0.2487,1.0052,2.684
+amino_acid_formation,cytosol,PEP + PEP + E4P + GLU + ATP + NADPH -> PHE + CO2 + AKG,,1.9472,0.1958,1.8715,2.1133
+amino_acid_formation,cytosol,PEP + PEP + E4P + GLU + ATP + NADPH -> TYR + CO2 + AKG,,1.2534,0.126,1.2046,1.3603
+amino_acid_formation,cytosol,SER + P5P + PEP + E4P + PEP + GLN + 3*ATP + NADPH -> TRP + CO2 + GAP + PYRcyt + GLU,,0.4029,0.0405,0.3872,0.4372
+amino_acid_formation,cytosol,P5P + MTHF + GLN + ASP + 5*ATP -> HIS + AKG + FUMmit + 2*NADH,,1.2534,0.126,1.2046,1.3603
+amino_acid_formation,cytosol,PYRcyt + OAAcyt + GLU -> ILE + CO2 + AKG,,0.0000001,1.45E-10,0,0.1516
+amino_acid_formation,cytosol,PYRmit + OAAmit + GLU -> ILE + CO2 + AKG,,0.0000001,4.44E-11,0,1.8773
+amino_acid_formation,cytosol,PYRcyt + THR + GLU + NADPH -> ILE + CO2 + AKG,,1.7793,0.1789,0,1.9309
+amino_acid_formation,cytosol,PYRmit + THR + GLU + NADPH -> ILE + CO2 + AKG,,1.76E-06,8.02E-11,0,1.4308
+amino_acid_formation,cytosol,ACCOAmit + PYRmit + PYRmit + GLU + NADPH -> LEU + CO2 + CO2 + AKG,,0.0121,0.1856,0,2.416
+amino_acid_formation,cytosol,ACCOAcyt + PYRcyt + PYRcyt + GLU + NADPH -> LEU + CO2 + CO2 + AKG,,3.5578,0.3442,1.3063,3.8728
+transport,extracellular,CO2 -> CO2_EX,reverse_CO2t,85.6067,21.5586,67.3202,93.8456
+biomass_formation,cytosol,0.294*ALA + 0.174*ARG + 0.196*ASN + 0.196*ASP + 0.036*CYS + 0.239*GLN + 0.239*GLU + 0.214*GLY + 0.112*HIS + 0.159*ILE + 0.319*LEU + 0.254*LYS + 0.112*MET + 0.174*PHE + 0.17*PRO + 0.203*SER + 0.221*THR + 0.036*TRP + 0.112*TYR + 0.221*VAL -> Biomass,biomass_C,11.1908,1.1253,10.7556,12.1454
+energy_metabolism,extracellular,ATP -> ATP_maintenance,ATPM,590.9128,90.5861,0,637.0857
+energy_metabolism,extracellular,NADH -> NADPH,,61.1617,254020,36.149,106.6446
+energy_metabolism,extracellular,NADH -> 2*ATP,,244.4782,49.0017,0,248.3921
+energy_metabolism,extracellular,UQH2 -> ATP,,18.8231,5.3808,12.7081,19.194

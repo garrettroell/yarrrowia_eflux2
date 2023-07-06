@@ -6,7 +6,12 @@ from matplotlib.offsetbox import (OffsetImage, AnnotationBbox, TextArea)
 
 # This function takes in a dataframe of flux values, and makes a scatter plot of
 #  predicted values vs. measured values
-def flux_prediction_scatterplot(fluxes_df, substrate, method):
+def flux_prediction_scatterplot(
+        fluxes_df=None,
+        substrate='',
+        method='',
+        range=None,
+):
     # define column names
     prediction_column_name = f'{method} Flux'
     prediction_std_column_name = f'{method} Flux Std'
@@ -73,13 +78,19 @@ def flux_prediction_scatterplot(fluxes_df, substrate, method):
 
     # add labels to the plot
     plt.title(r''+ r"$\bf{" + str(substrate) + r"\;" + str(method) + "}$"  + ': ' + f"$R^2$={r_squared:.2F}", fontsize=24)
-    plt.ylabel('GSM Flux', fontsize=22)
+    plt.ylabel(f'{method} Flux', fontsize=22)
     plt.xlabel('13C-MFA Flux', fontsize=22)
     plt.legend(fontsize=10)
     
     # add styles to the plot
     plt.xticks(fontsize=14)
     plt.yticks(fontsize=14)
+
+    # only show the range of fluxes specified
+    if range:
+        plt.xlim(range)
+        plt.ylim(range)
     
     # save and show the plot
+    plt.savefig(f'../figures/{substrate}_{method}_scatterplot.png', bbox_inches='tight')
     plt.show()

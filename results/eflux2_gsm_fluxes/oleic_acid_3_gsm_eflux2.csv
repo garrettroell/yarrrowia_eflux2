@@ -6,8 +6,8 @@ PIt2m,phosphate transporter mitochondrial,h[c] + pi[c] <=> h[m] + pi[m],2190.428
 CYOR_u6m,ubiquinol 6 cytochrome c reductase,2.0 ficytc[m] + 1.5 h[m] + q6h2[m] --> 2.0 focytc[m] + 1.5 h[c] + q6[m],2099.8792352114287
 O2t,o2 transport diffusion ,o2[e] <=> o2[c],1405.4303754442699
 EX_o2(e),O2 exchange,o2[e] <=> ,-1405.4303754442699
-CYOOm,cytochrome c oxidase mitochondrial,4.0 focytc[m] + 6.0 h[m] + o2[m] --> 4.0 ficytc[m] + 2.0 h2o[m] + 6.0 h[c],1049.9396176057144
 O2tm,O2 transport diffusion ,o2[c] <=> o2[m],1049.9396176057144
+CYOOm,cytochrome c oxidase mitochondrial,4.0 focytc[m] + 6.0 h[m] + o2[m] --> 4.0 ficytc[m] + 2.0 h2o[m] + 6.0 h[c],1049.9396176057144
 NADH2_u6m,NADH dehydrogenase mitochondrial,h[m] + nadh[m] + q6[m] --> nad[m] + q6h2[m],1029.2113622943687
 H2Ot,H2O transport via diffusion,h2o[e] <=> h2o[c],-1001.3848351435668
 EX_h2o(e),H2O exchange,h2o[e] <=> ,1001.3848351435668
@@ -64,7 +64,7 @@ ADK1,adenylate kinase,amp[c] + atp[c] --> 2.0 adp[c],136.66494317225144
 G3PDm,glycerol 3 phosphate dehydrogenase FAD mitochondrial,glyc3p[m] + nad[m] --> dhap[m] + nadh[m],101.82841316773674
 G3PD1irm,glycerol 3 phosphate dehydrogenase NAD mitochondrial,dhap[m] + h[m] + nadh[m] --> glyc3p[m] + nad[m],101.8284131677347
 OCDCEAt,Octadecenoate n C181 transport in via uniport,ocdcea[e] --> ocdcea[c],100.0
-EX_ocdcea(e),octadecenoate n C181 exchange,ocdcea[e] <=> ,-100.0
+EX_ocdcea(e),octadecenoate n C181 exchange,ocdcea[e] --> ,-100.0
 FACOAL181,fatty acid CoA ligase octadecenoate ,atp[c] + coa[c] + ocdcea[c] --> amp[c] + odecoa[c] + ppi[c],100.0
 CSp,citrate synthase,accoa[x] + h2o[x] + oaa[x] --> cit[x] + coa[x] + h[x],97.54270510480885
 CITtap,citratemalate antiport into peroxisome,cit[x] + mal_L[c] <=> cit[c] + mal_L[x],97.54270510480885
@@ -219,9 +219,9 @@ UMPK,UMP kinase,atp[c] + ump[c] <=> adp[c] + udp[c],2.2607466962654423
 GRTT,geranyltranstransferase,grdp[c] + ipdp[c] --> frdp[c] + ppi[c],2.219020117099767
 IPDDI,isopentenyl diphosphate D isomerase,ipdp[c] <=> dmpp[c],2.2190201170997663
 DMATT,dimethylallyltranstransferase,dmpp[c] + ipdp[c] --> grdp[c] + ppi[c],2.219020117099766
-GND,phosphogluconate dehydrogenase,6pgc[c] + nadp[c] --> co2[c] + nadph[c] + ru5p_D[c],2.1312190313593935
 PGL,6 phosphogluconolactonase,6pgl[c] + h2o[c] --> 6pgc[c] + h[c],2.1312190313593935
 G6Pter,glucose 6 phosphate endoplasmic reticular transport via diffusion,g6p[c] <=> g6p[r],2.1312190313593935
+GND,phosphogluconate dehydrogenase,6pgc[c] + nadp[c] --> co2[c] + nadph[c] + ru5p_D[c],2.1312190313593935
 6PGLter,6 phospho D glucono 1 5 lactone endoplasmic reticular transport via diffusion,6pgl[c] <=> 6pgl[r],-2.131219031359393
 G6PDH2er,glucose 6 phosphate dehydrogenase endoplasmic reticulum,g6p[r] + nadp[r] --> 6pgl[r] + h[r] + nadph[r],2.131219031359393
 DASYN_SC,CDP Diacylglycerol synthetase yeast specific,ctp[c] + h[c] + 0.01 pa_SC[c] <=> 0.01 cdpdag_SC[c] + ppi[c],2.009319767427729
@@ -282,8 +282,8 @@ TRIGSY_GLYC,triglycerol yarrowia glycerol synthesis YL,0.01 12dgr_SC[c] + 0.0356
 DAGPYP_SC,diacylglycerol pyrophosphate phosphatase yeast specific,h2o[c] + 0.01 pa_SC[c] --> 0.01 12dgr_SC[c] + pi[c],0.6783254849623959
 URIDK2r,uridylate kinase dUMP ,atp[c] + dump[c] <=> adp[c] + dudp[c],-0.6025602898430436
 RNDR4,ribonucleoside diphosphate reductase UDP ,trdrd[c] + udp[c] --> dudp[c] + h2o[c] + trdox[c],0.6025602898430434
-NDPK3,nucleoside diphosphate kinase ATPCDP ,atp[c] + cdp[c] --> adp[c] + ctp[c],0.35113336100533854
 CYTK1,cytidylate kinase CMP ,atp[c] + cmp[c] <=> adp[c] + cdp[c],0.35113336100533854
+NDPK3,nucleoside diphosphate kinase ATPCDP ,atp[c] + cdp[c] --> adp[c] + ctp[c],0.35113336100533854
 DCMPDA,dCMP deaminase,dcmp[c] + h2o[c] + h[c] <=> dump[c] + nh4[c],-0.3024870410645537
 TMDS,thymidylate synthase,dump[c] + mlthf[c] --> dhf[c] + dtmp[c],0.30007324877848984
 DHFRi,dihydrofolate reductase irreversible ,dhf[c] + h[c] + nadph[c] --> nadp[c] + thf[c],0.3000732487784771
@@ -301,20 +301,20 @@ TRE6PP,trehalose phosphatase,h2o[c] + tre6p[c] --> pi[c] + tre[c],0.198827502315
 CYSS,cysteine synthase,acser[c] + h2s[c] --> ac[c] + cys_L[c] + h[c],0.10525728490386306
 SERATi,serine O acetyltransferase irreversible,accoa[c] + ser_L[c] --> acser[c] + coa[c],0.10525728490386306
 ANS,anthranilate synthase,chor[c] + gln_L[c] --> anth[c] + glu_L[c] + h[c] + pyr[c],0.06244467311381035
-TRPS1,tryptophan synthase indoleglycerol phosphate ,3ig3p[c] + ser_L[c] --> g3p[c] + h2o[c] + trp_L[c],0.06244467311381034
 ANPRT,anthranilate phosphoribosyltransferase,anth[c] + prpp[c] --> ppi[c] + pran[c],0.06244467311381034
+TRPS1,tryptophan synthase indoleglycerol phosphate ,3ig3p[c] + ser_L[c] --> g3p[c] + h2o[c] + trp_L[c],0.06244467311381034
 PRAIi,phosphoribosylanthranilate isomerase irreversible ,pran[c] --> 2cpr5p[c],0.062444673113810335
 IGPS,indole 3 glycerol phosphate synthase,2cpr5p[c] + h[c] --> 3ig3p[c] + co2[c] + h2o[c],0.062444673113810335
-PEtm_SC,phosphatidylethanolamine mitochondrial transport yeast specific,pe_SC[c] <=> pe_SC[m],-0.016904951379043964
 PStm_SC,phosphatidylserine mitochondrial transport yeast specific,ps_SC[c] <=> ps_SC[m],0.016904951379043964
+PEtm_SC,phosphatidylethanolamine mitochondrial transport yeast specific,pe_SC[c] <=> pe_SC[m],-0.016904951379043964
 TGL,TGL,h2o[c] + 0.01 triglyc_SC[c] --> 0.01 12dgr_SC[c] + h[c] + 0.0374 hdcoa[c] + 0.638 ocdycacoa[c] + 0.249 odecoa[c] + 0.0768 pmtcoa[c] + 0.0105 stcoa[c],0.00020120392078176358
 DHAPtm,dihydroxyacetone phosphate transport mitochondrial,dhap[m] --> dhap[c],2.039270077905538e-12
-CRNt,L carnitine reversible transport,crn[e] <=> crn[c],-8.962166365419163e-14
 EX_crn(e),L Carnitine exchange,crn[e] --> ,8.962166365419163e-14
+CRNt,L carnitine reversible transport,crn[e] <=> crn[c],-8.962166365419163e-14
 NADPPPS,NADP phosphatase,h2o[c] + nadp[c] --> nad[c] + pi[c],-3.364208422368236e-14
 HMGCOASm,Hydroxymethylglutaryl CoA synthase mitochondrial,coa[m] + h[m] + hmgcoa[m] <=> aacoa[m] + accoa[m] + h2o[m],1.027815071284492e-14
-ACACT1m,acetyl CoA C acetyltransferase mitochondrial,2.0 accoa[m] <=> aacoa[m] + coa[m],-1.027815071284492e-14
 HMGCOAtm,Hydroxymethylglutaryl CoA reversible mitochondrial transport,hmgcoa[c] <=> hmgcoa[m],1.027815071284492e-14
+ACACT1m,acetyl CoA C acetyltransferase mitochondrial,2.0 accoa[m] <=> aacoa[m] + coa[m],-1.027815071284492e-14
 DHORTS,dihydroorotase,dhor_S[c] + h2o[c] <=> cbasp[c] + h[c],-1.4554857357046006e-15
 CBASPtn,N carbomoyl L aspartate transport diffusion,cbasp[n] <=> cbasp[c],1.4554857357046006e-15
 ADCS,4 amino 4 deoxychorismate synthase,chor[c] + gln_L[c] --> 4adcho[c] + glu_L[c],1.3807622851013784e-15
@@ -323,41 +323,41 @@ DHPTtm,Dihydropteroate mitochondrial transport via diffusion,dhpt[c] <=> dhpt[m]
 ADCL,4 aminobenzoate synthase,4adcho[c] --> 4abz[c] + h[c] + pyr[c],1.380762285101378e-15
 DHPSm,dihydropteroate synthase mitochondrial,2ahhmp[m] + 4abz[m] --> dhpt[m] + h2o[m],1.380762285101378e-15
 GCALDtm,glycoaldehyde mitochondrial transport,gcald[c] <=> gcald[m],-1.3807622851013779e-15
-DHNPTtm,dhnpt mitochondrial transport,dhnpt[c] <=> dhnpt[m],1.3807622851013779e-15
 DHNPAm,dihydroneopterin aldolase,dhnpt[m] --> 2ahhmp[m] + gcald[m] + h[m],1.3807622851013779e-15
 4ABZtm,4 Aminobenzoate mitochondrial transport via diffusion,4abz[c] <=> 4abz[m],1.3807622851013779e-15
+DHNPTtm,dhnpt mitochondrial transport,dhnpt[c] <=> dhnpt[m],1.3807622851013779e-15
 CITtbm,citrate transport mitochondrial,cit[c] + pep[m] <=> cit[m] + pep[c],-9.609542110116938e-16
 TYRTAm,tyrosine transaminase mitochondrial,akg[m] + tyr_L[m] <=> 34hpp[m] + glu_L[m],-7.623024414235107e-16
 34HPPt2m,3 4 hydroxyphenyl pyruvate mitochondrial transport via proton symport,34hpp[c] + h[c] <=> 34hpp[m] + h[m],5.09586155628897e-16
 NMNAT,nicotinamide nucleotide adenylyltransferase,atp[c] + h[c] + nmn[c] --> nad[c] + ppi[c],3.4782395808345994e-16
-PPAm,inorganic diphosphatase,h2o[m] + ppi[m] --> h[m] + 2.0 pi[m],-3.4782395808345994e-16
 NMNATm,nicotinamide nucleotide adenylyltransferase mitochondrial,atp[m] + h[m] + nmn[m] --> nad[m] + ppi[m],-3.4782395808345994e-16
+PPAm,inorganic diphosphatase,h2o[m] + ppi[m] --> h[m] + 2.0 pi[m],-3.4782395808345994e-16
 NMNt2m,NMN mitochondrial transport via proton symport,h[c] + nmn[c] <=> h[m] + nmn[m],-3.4782395808345994e-16
 FAS180,fatty acid synthase n C180 ,3.0 h[c] + hdca[c] + malcoa[c] + 2.0 nadph[c] --> co2[c] + coa[c] + h2o[c] + 2.0 nadp[c] + ocdca[c],-3.2859959926954066e-16
 FAS160,fatty acid synthase n C160 ,3.0 h[c] + malcoa[c] + 2.0 nadph[c] + ttdca[c] --> co2[c] + coa[c] + h2o[c] + hdca[c] + 2.0 nadp[c],-3.2859959926954066e-16
 FACOAL180,fatty acid CoA ligase octadecanoate ,atp[c] + coa[c] + ocdca[c] --> amp[c] + ppi[c] + stcoa[c],-3.285995992695406e-16
 ACt2r,acetate reversible transport via proton symport,ac[e] + h[e] <=> ac[c] + h[c],-2.67387370540528e-16
-PPM,phosphopentomutase,r1p[c] <=> r5p[c],0.0
-MEVK2,mevalonate kinase ctp ,ctp[c] + mev_R[c] --> 5pmev[c] + cdp[c] + h[c],0.0
-PPBNGS,porphobilinogen synthase,2.0 5aop[c] --> 2.0 h2o[c] + h[c] + ppbng[c],0.0
-PPCDC,phosphopantothenoylcysteine decarboxylase,4ppcys[c] + h[c] --> co2[c] + pan4p[c],0.0
-ACSp,acetyl CoA synthetase,ac[x] + atp[x] + coa[x] --> accoa[x] + amp[x] + ppi[x],0.0
-PPPG9tm,protoporphyrinogen IX mitochondrial transport,pppg9[c] <=> pppg9[m],0.0
-MEVK3,mevalonate kinase gtp ,gtp[c] + mev_R[c] --> 5pmev[c] + gdp[c] + h[c],0.0
 PPNCL2,phosphopantothenate cysteine ligase,4ppan[c] + ctp[c] + cys_L[c] --> 4ppcys[c] + cmp[c] + h[c] + ppi[c],0.0
+ACSp,acetyl CoA synthetase,ac[x] + atp[x] + coa[x] --> accoa[x] + amp[x] + ppi[x],0.0
+PPBNGS,porphobilinogen synthase,2.0 5aop[c] --> 2.0 h2o[c] + h[c] + ppbng[c],0.0
+PPM,phosphopentomutase,r1p[c] <=> r5p[c],0.0
+PPCDC,phosphopantothenoylcysteine decarboxylase,4ppcys[c] + h[c] --> co2[c] + pan4p[c],0.0
 PPND,prephenate dehydrogenase,nad[c] + pphn[c] --> 34hpp[c] + co2[c] + nadh[c],0.0
-NDPK4,nucleoside diphosphate kinase ATPdTDP ,atp[c] + dtdp[c] --> adp[c] + dttp[c],0.0
-ACRNtp,acetylcarnitine transport out of peroxisome,acrn[x] --> acrn[c],0.0
-ACOATAm,Acetyl CoA ACP transacylase,ACP[m] + accoa[m] <=> acACP[m] + coa[m],0.0
-ACP1e,acid phosphatase extracellular secreted ,fmn[e] + h2o[e] --> pi[e] + ribflv[e],0.0
-ACRNtm,O acetylcarnintine transport into mitochondria via diffusion,acrn[c] --> acrn[m],0.0
-NDPK5,nucleoside diphosphate kinase ATPdGDP ,atp[c] + dgdp[c] --> adp[c] + dgtp[c],0.0
-PPPGOm,protoporphyrinogen oxidase mitochondrial,3.0 o2[m] + 2.0 pppg9[m] --> 6.0 h2o[m] + 2.0 ppp9[m],0.0
+NADK,NAD kinase,atp[c] + nad[c] --> adp[c] + h[c] + nadp[c],0.0
+MEVK3,mevalonate kinase gtp ,gtp[c] + mev_R[c] --> 5pmev[c] + gdp[c] + h[c],0.0
 ACSm,acetyl CoA synthetase,ac[m] + atp[m] + coa[m] --> accoa[m] + amp[m] + ppi[m],0.0
-ACtp,acetate transport peroxisomal,ac[c] <=> ac[x],0.0
-POLYAO2,poylamine oxidase,N1sprm[c] + h2o[c] + o2[c] --> N1aspmd[c] + aproa[c] + h2o2[c],0.0
+PPPG9tm,protoporphyrinogen IX mitochondrial transport,pppg9[c] <=> pppg9[m],0.0
+PPPGOm,protoporphyrinogen oxidase mitochondrial,3.0 o2[m] + 2.0 pppg9[m] --> 6.0 h2o[m] + 2.0 ppp9[m],0.0
 NDPK6,nucleoside diphosphate kinase ATPdUDP ,atp[c] + dudp[c] --> adp[c] + dutp[c],0.0
-PI45BPP_SC,1 phosphatidylinositol 4 5 bisphosphate phosphodiesterase yeast specific,h2o[c] + 0.01 ptd145bp_SC[c] --> 0.01 12dgr_SC[c] + h[c] + mi145p[c],0.0
+ACRNtm,O acetylcarnintine transport into mitochondria via diffusion,acrn[c] --> acrn[m],0.0
+ACP1e,acid phosphatase extracellular secreted ,fmn[e] + h2o[e] --> pi[e] + ribflv[e],0.0
+ACOATAm,Acetyl CoA ACP transacylase,ACP[m] + accoa[m] <=> acACP[m] + coa[m],0.0
+NDPK5,nucleoside diphosphate kinase ATPdGDP ,atp[c] + dgdp[c] --> adp[c] + dgtp[c],0.0
+MEVK2,mevalonate kinase ctp ,ctp[c] + mev_R[c] --> 5pmev[c] + cdp[c] + h[c],0.0
+ACRNtp,acetylcarnitine transport out of peroxisome,acrn[x] --> acrn[c],0.0
+PMDPHT,pyrimidine phosphatase,5aprbu[c] + h2o[c] --> 4r5au[c] + pi[c],0.0
+POLYAO2,poylamine oxidase,N1sprm[c] + h2o[c] + o2[c] --> N1aspmd[c] + aproa[c] + h2o2[c],0.0
+POLYAO,polyamine oxidase,N1aspmd[c] + h2o[c] + o2[c] --> aproa[c] + aprut[c] + h2o2[c],0.0
 PI4P5K_SC,phosphatidylinositol 4 phosphate 5 kinase yeast specfic,atp[c] + 0.01 ptd4ino_SC[c] --> adp[c] + h[c] + 0.01 ptd145bp_SC[c],0.0
 PIN3K_SC,1 phosphatidylinositol 3 kinase yeast specific,atp[c] + 0.01 ptd1ino_SC[c] --> adp[c] + h[c] + 0.01 ptd3ino_SC[c],0.0
 PIN4K_SC,phosphatidylinositol 4 kinase yeast specific,atp[c] + 0.01 ptd1ino_SC[c] --> adp[c] + h[c] + 0.01 ptd4ino_SC[c],0.0
@@ -365,20 +365,20 @@ MIP2CS124_SC,mannose inositol P 2 ceramide synthase ceramide 1 24C yeast specifi
 PIN4Kn_SC,phosphatidylinositol 4 kinase nuclear yeast specifc,atp[n] + 0.01 ptd1ino_SC[n] --> adp[n] + h[n] + 0.01 ptd4ino_SC[n],0.0
 ADHAPR_SC,acyldihydroxyacetonephosphate reductase yeast specific,0.01 1agly3p_SC[c] + h[c] + nadph[c] --> 0.01 1ag3p_SC[c] + nadp[c],0.0
 ADEtm,adenine reversible transport mitochondria,ade[c] <=> ade[m],0.0
+NADS1,NAD synthase nh3 ,atp[c] + dnad[c] + nh4[c] --> amp[c] + h[c] + nad[c] + ppi[c],0.0
 NDPK7,nucleoside diphosphate kinase ATPdCDP ,atp[c] + dcdp[c] --> adp[c] + dctp[c],0.0
 ADEt2,adenine transport in via proton symport,ade[e] + h[e] --> ade[c] + h[c],0.0
-POLYAO,polyamine oxidase,N1aspmd[c] + h2o[c] + o2[c] --> aproa[c] + aprut[c] + h2o2[c],0.0
 MHPGLUT,5 methyltetrahydropteroyltriglutamate homocysteine S methyltransferase,hcys_L[c] + mhpglu[c] --> hpglu[c] + met_L[c],0.0
 PIt2v,phosphate vacuolar transport via proton symport,h[c] + pi[c] <=> h[v] + pi[v],0.0
-PMDPHT,pyrimidine phosphatase,5aprbu[c] + h2o[c] --> 4r5au[c] + pi[c],0.0
 ACOATA,Acetyl CoA ACP transacylase,ACP[c] + accoa[c] <=> acACP[c] + coa[c],0.0
+ACtp,acetate transport peroxisomal,ac[c] <=> ac[x],0.0
 ACtm,acetate transport mitochondrial,ac[c] <=> ac[m],0.0
 PMPK,phosphomethylpyrimidine kinase,4ampm[c] + atp[c] --> 2mahmp[c] + adp[c],0.0
 PNTK,pantothenate kinase,atp[c] + pnto_R[c] --> 4ppan[c] + adp[c] + h[c],0.0
 PNTOt2,Pantothenate reversible transport via proton symport,h[e] + pnto_R[e] <=> h[c] + pnto_R[c],0.0
 ALATRS,Alanyl tRNA synthetase,ala_L[c] + atp[c] + trnaala[c] --> alatrna[c] + amp[c] + ppi[c],0.0
-AKGt2n,2 oxoglutarate nuclear transport via proton symport,akg[c] + h[c] <=> akg[n] + h[n],0.0
-NDP4,nucleoside diphosphatase dGDP ,dgdp[c] + h2o[c] --> dgmp[c] + h[c] + pi[c],0.0
+NDPK4,nucleoside diphosphate kinase ATPdTDP ,atp[c] + dtdp[c] --> adp[c] + dttp[c],0.0
+AKGt2r,2 oxoglutarate reversible transport via symport,akg[e] + h[e] --> akg[c] + h[c],0.0
 ALAt2r,L alanine reversible transport via proton symport,ala_L[e] + h[e] <=> ala_L[c] + h[c],0.0
 PUNP4,purine nucleoside phosphorylase Deoxyguanosine ,dgsn[c] + pi[c] <=> 2dr1p[c] + gua[c],0.0
 PTD4INOtn_SC,phosphatidyl 1D myo 4 inositol nuclear transport yeast specific,ptd4ino_SC[c] <=> ptd4ino_SC[n],0.0
@@ -393,7 +393,7 @@ PUNP3,purine nucleoside phosphorylase Guanosine ,gsn[c] + pi[c] <=> gua[c] + r1p
 NADS1m,NAD synthase nh3 mitochondrial,atp[m] + dnad[m] + nh4[m] --> amp[m] + h[m] + nad[m] + ppi[m],0.0
 PUNP3m,purine nucleoside phosphorylase Guanosine mitochondrial,gsn[m] + pi[m] <=> gua[m] + r1p[m],0.0
 NAPRTm,NAPRTase mitochondrial,h[m] + nac[m] + prpp[m] --> nicrnt[m] + ppi[m],0.0
-ACOAO9p,acyl CoA oxidase hexacanoyl CoA peroxisomal,hexccoa[x] + o2[x] --> h2o2[x] + hxc2coa[x],0.0
+PStv_SC,phosphatidylserine vacuolar transport yeast specific,ps_SC[c] <=> ps_SC[v],0.0
 PUNP5,purine nucleoside phosphorylase Inosine ,ins[c] + pi[c] <=> hxan[c] + r1p[c],0.0
 PUNP6,purine nucleoside phosphorylase Deoxyinosine ,din[c] + pi[c] <=> 2dr1p[c] + hxan[c],0.0
 PUNP7,purine nucleoside phosphorylase Xanthosine ,pi[c] + xtsn[c] <=> r1p[c] + xan[c],0.0
@@ -406,37 +406,37 @@ PYDXO,pyridoxal oxidase,2.0 h2o[c] + nh4[c] + 0.5 o2[c] + pydx[c] <=> 2.0 h2o2[c
 ACGSm,N acteylglutamate synthase mitochondrial,accoa[m] + glu_L[m] --> acglu[m] + coa[m] + h[m],0.0
 PYNP2r,pyrimidine nucleoside phosphorylase uracil ,pi[c] + uri[c] <=> r1p[c] + ura[c],0.0
 PTD1INOtn_SC,phosphatidyl 1D myo insoitol nuclear transport yeast specific,ptd1ino_SC[c] <=> ptd1ino_SC[n],0.0
-PStv_SC,phosphatidylserine vacuolar transport yeast specific,ps_SC[c] <=> ps_SC[v],0.0
-PStg_SC,phosphatidylserine Golgi transport yeast specific,ps_SC[c] <=> ps_SC[g],0.0
-ACOAH,acetyl CoA hydrolase,accoa[c] + h2o[c] --> ac[c] + coa[c] + h[c],0.0
+NDP3,nucleoside diphosphatase GDP ,gdp[c] + h2o[c] --> gmp[c] + h[c] + pi[c],0.0
+ACOAO9p,acyl CoA oxidase hexacanoyl CoA peroxisomal,hexccoa[x] + o2[x] --> h2o2[x] + hxc2coa[x],0.0
+METTRS,Methionyl tRNA synthetase,atp[c] + met_L[c] + trnamet[c] --> amp[c] + mettrna[c] + ppi[c],0.0
 METt2r,L methionine reversible transport via proton symport,h[e] + met_L[e] <=> h[c] + met_L[c],0.0
 PRO1xm,proline oxidase NAD mitochondrial,nad[m] + pro_L[m] --> 1pyr5c[m] + 2.0 h[m] + nadh[m],0.0
 METt2m,methionine mitochondrial transport via proton symport,h[m] + met_L[m] <=> h[c] + met_L[c],0.0
 PROTRS,Prolyl tRNA synthetase,atp[c] + pro_L[c] + trnapro[c] --> amp[c] + ppi[c] + protrna[c],0.0
 METTRSm,methionyl tRNA synthetase mitochondrial,atp[m] + met_L[m] + trnamet[m] --> amp[m] + mettrna[m] + ppi[m],0.0
-AKGt2r,2 oxoglutarate reversible transport via symport,akg[e] + h[e] --> akg[c] + h[c],0.0
-PHEt2r,L phenylalanine reversible transport via proton symport,h[e] + phe_L[e] <=> h[c] + phe_L[c],0.0
+AKGt2n,2 oxoglutarate nuclear transport via proton symport,akg[c] + h[c] <=> akg[n] + h[n],0.0
+PI3P4K_SC,phosphatidylinositol 3 phosphate 4 kinase yeast specific,atp[c] + 0.01 ptd3ino_SC[c] --> adp[c] + h[c] + 0.01 ptd134bp_SC[c],0.0
 PROt2r,L proline reversible transport via proton symport,h[e] + pro_L[e] <=> h[c] + pro_L[c],0.0
 PROtm,L proline transport mitochondrial,pro_L[c] <=> pro_L[m],0.0
 ACOAO8p,acyl CoA oxidase octadecanoyl CoA peroxisomal,o2[x] + stcoa[x] --> h2o2[x] + od2coa[x],0.0
 PRPPtm,PRPP reversible transport mitochondrial,prpp[c] <=> prpp[m],0.0
-METTRS,Methionyl tRNA synthetase,atp[c] + met_L[c] + trnamet[c] --> amp[c] + mettrna[c] + ppi[c],0.0
 ACOAO7p,acyl CoA oxidase hexadecanoyl CoA peroxisomal,o2[x] + pmtcoa[x] --> h2o2[x] + hdd2coa[x],0.0
+PStg_SC,phosphatidylserine Golgi transport yeast specific,ps_SC[c] <=> ps_SC[g],0.0
 PSERDg_SC,phosphatidylserine decarboxylase yeast specific Golgi,h[g] + 0.01 ps_SC[g] --> co2[g] + 0.01 pe_SC[g],0.0
 ACOAO6p,acyl CpA oxidase tetradecanoyl CoA peroxisomal,o2[x] + tdcoa[x] --> h2o2[x] + td2coa[x],0.0
 PSERDv_SC,phosphatidylserine decarboxylase yeast specific vacuolar,h[v] + 0.01 ps_SC[v] --> co2[v] + 0.01 pe_SC[v],0.0
 ACOAO5p,acyl CoA oxidase dodecanoyl CoA peroxisomal,ddcacoa[x] + o2[x] --> dd2coa[x] + h2o2[x],0.0
 PSERSm_SC,phosphatidylserine synthase yeast specific mitochondrial,0.01 cdpdag_SC[m] + ser_L[m] <=> cmp[m] + h[m] + 0.01 ps_SC[m],0.0
 ACOAO4p,acyl CoA oxidase decanoyl CoA peroxisomal,dcacoa[x] + o2[x] --> dc2coa[x] + h2o2[x],0.0
-NDP3g,nucleoside diphosphatase GDP Golgi,gdp[g] + h2o[g] --> gmp[g] + h[g] + pi[g],0.0
+NDP4,nucleoside diphosphatase dGDP ,dgdp[c] + h2o[c] --> dgmp[c] + h[c] + pi[c],0.0
 PSPHPL,phytosphingosine phosphate lyase,psph1p[c] --> 2hhxdal[c] + ethamp[c],0.0
 PSPHS,Phytosphingosine synthesis,h[c] + nadph[c] + o2[c] + sphgn[c] --> h2o[c] + nadp[c] + psphings[c],0.0
-NDP3,nucleoside diphosphatase GDP ,gdp[c] + h2o[c] --> gmp[c] + h[c] + pi[c],0.0
-PI3P4K_SC,phosphatidylinositol 3 phosphate 4 kinase yeast specific,atp[c] + 0.01 ptd3ino_SC[c] --> adp[c] + h[c] + 0.01 ptd134bp_SC[c],0.0
-INSTt2,inositol transport in via proton symport,h[e] + inost[e] --> h[c] + inost[c],0.0
-NADS1,NAD synthase nh3 ,atp[c] + dnad[c] + nh4[c] --> amp[c] + h[c] + nad[c] + ppi[c],0.0
-OCDCAt,Octadecanoate n C180 transport in via uniport,ocdca[e] --> ocdca[c],0.0
-NABTNO,N4 AcetylaminobutanalNAD oxidoreductase,h2o[c] + n4abutn[c] + nad[c] --> 4aabutn[c] + 2.0 h[c] + nadh[c],0.0
+NDP3g,nucleoside diphosphatase GDP Golgi,gdp[g] + h2o[g] --> gmp[g] + h[g] + pi[g],0.0
+ACOAH,acetyl CoA hydrolase,accoa[c] + h2o[c] --> ac[c] + coa[c] + h[c],0.0
+PI45BPP_SC,1 phosphatidylinositol 4 5 bisphosphate phosphodiesterase yeast specific,h2o[c] + 0.01 ptd145bp_SC[c] --> 0.01 12dgr_SC[c] + h[c] + mi145p[c],0.0
+ADK3,adentylate kinase GTP ,amp[c] + gtp[c] --> adp[c] + gdp[c],0.0
+PHEt2r,L phenylalanine reversible transport via proton symport,h[e] + phe_L[e] <=> h[c] + phe_L[c],0.0
+AHCYStm,S adenosyl L homocysteine reversible transport mitochondrial,ahcys[c] <=> ahcys[m],0.0
 ALASm,5 aminolevulinate synthase,gly[m] + h[m] + succoa[m] --> 5aop[m] + co2[m] + coa[m],0.0
 NTP4,nucleoside triphosphatase dGTP ,dgtp[c] + h2o[c] --> dgdp[c] + h[c] + pi[c],0.0
 NTRLASE,nitrilase,2.0 h2o[c] + ind3acnl[c] --> ind3ac[c] + nh4[c],0.0
@@ -447,10 +447,10 @@ AKGDam,oxoglutarate dehydrogenase lipoamide ,akg[m] + h[m] + lpam[m] <=> co2[m] 
 AHSERL,O acetylhomoserine thiol lyase,achms[c] + ch4s[c] --> ac[c] + h[c] + met_L[c],0.0
 AHMMPS,4 amino 5 hydroxymethyl 2 methylpyrimidine synthetase,air[c] + 2.0 h[c] --> 4ahmmp[c] + gcald[c] + pi[c],0.0
 AHCYStn,S adenosyl L homocysteine nuclear transport,ahcys[c] <=> ahcys[n],0.0
-AHCYStm,S adenosyl L homocysteine reversible transport mitochondrial,ahcys[c] <=> ahcys[m],0.0
-OPHHX6,2 Octaprenylphenol hydroxylase,2oph_5[c] + 0.5 o2[c] --> 2ohph_5[c],0.0
+OCDCAt,Octadecanoate n C180 transport in via uniport,ocdca[e] --> ocdca[c],0.0
 OCDCYAt,Octadecynoate n C182 transport in via uniport,ocdcya[e] --> ocdcya[c],0.0
-NDPK9,nucleoside diphosphate kinase ATPIDP ,atp[c] + idp[c] --> adp[c] + itp[c],0.0
+NADPPPSm,NADP phosphatase,h2o[m] + nadp[m] --> nad[m] + pi[m],0.0
+AKGMAL,alpha ketoglutaratemalate transporter,akg[e] + mal_L[c] --> akg[c] + mal_L[e],0.0
 OCTDP_5tm,all trans Octaprenyl diphosphate,octdp_5[c] <=> octdp_5[m],0.0
 OHPBAT,O Phospho 4 hydroxy L threonine2 oxoglutarate aminotransferase,glu_L[c] + ohpb[c] <=> akg[c] + phthr[c],0.0
 OHPHM6n,2 octaprenyl 6 hydroxyphenol methylase nuclear,2ohph_5[n] + amet[n] --> 2omph_5[n] + ahcys[n] + h[n],0.0
@@ -460,22 +460,22 @@ OMCDCm,2 oxo 4 methyl 3 carboxypentanoate decarboxylation,3c4mop[m] + h[m] --> 4
 OMMBLHX6m,2 Octaprenyl 3 methyl 6 methoxy 1 4 benzoquinol hydroxylase mitochodnrial,2ommbl_5[m] + 0.5 o2[m] --> 2omhmbl_5[m],0.0
 ADNt2,adenosine transport in via proton symport,adn[e] + h[e] --> adn[c] + h[c],0.0
 OMPHHX6m,2 octaprenyl 6 methoxyphenol hydroxylase mitochondrial,2omph_5[m] + 0.5 o2[m] --> 2ombzl_5[m],0.0
+OPHBDC6,Octaprenyl hydroxybenzoate decarboxylase,3ophb_5[c] + h[c] --> 2oph_5[c] + co2[c],0.0
+NABTNO,N4 AcetylaminobutanalNAD oxidoreductase,h2o[c] + n4abutn[c] + nad[c] --> 4aabutn[c] + 2.0 h[c] + nadh[c],0.0
 NTP3,nucleoside triphosphatase GTP ,gtp[c] + h2o[c] --> gdp[c] + h[c] + pi[c],0.0
 NTD9,5 nucleotidase GMP ,gmp[c] + h2o[c] --> gsn[c] + pi[c],0.0
 NTD8,5 nucleotidase dGMP ,dgmp[c] + h2o[c] --> dgsn[c] + pi[c],0.0
-NTD7,5 nucleotidase AMP ,amp[c] + h2o[c] --> adn[c] + pi[c],0.0
 NMNTP,nmntp,h[e] + nmn[e] --> h[c] + nmn[c],0.0
 NADKm,NAD kinase mitochondrial,atp[m] + nad[m] --> adp[m] + h[m] + nadp[m],0.0
-NADN,NAD nucleosidase,h2o[c] + nad[c] --> adprib[c] + h[c] + ncam[c],0.0
 NMNt2p,NMN peroxisomal transport via proton symport,h[c] + nmn[c] <=> h[x] + nmn[x],0.0
-NADNm,NAD nucleosidase mitochondrial,h2o[m] + nad[m] --> adprib[m] + h[m] + ncam[m],0.0
+NADN,NAD nucleosidase,h2o[c] + nad[c] --> adprib[c] + h[c] + ncam[c],0.0
 NNAMr,nicotinamidase reversible,h2o[c] + ncam[c] <=> nac[c] + nh4[c],0.0
 NNAMrm,nicotinamidase reversible mitochondrial,h2o[m] + ncam[m] <=> nac[m] + nh4[m],0.0
 AKP1,alkaline phosphatase Dihydroneopterin ,ahdt[c] + 3.0 h2o[c] --> dhnpt[c] + 2.0 h[c] + 3.0 pi[c],0.0
+NADNm,NAD nucleosidase mitochondrial,h2o[m] + nad[m] --> adprib[m] + h[m] + ncam[m],0.0
 NADDPp,NAD diphosphatase peroxisomal,h2o[x] + nad[x] --> amp[x] + 2.0 h[x] + nmn[x],0.0
 NNAT,nicotinate nucleotide adenylyltransferase,atp[c] + h[c] + nicrnt[c] --> dnad[c] + ppi[c],0.0
 NH4tp,ammonia peroxisomal transport,nh4[c] <=> nh4[x],0.0
-AKGMAL,alpha ketoglutaratemalate transporter,akg[e] + mal_L[c] --> akg[c] + mal_L[e],0.0
 NNATm,nicotinate nucleotide adenylyltransferase mitochondrial,atp[m] + h[m] + nicrnt[m] --> dnad[m] + ppi[m],0.0
 NNDPR,nicotinate nucleotide diphosphorylase carboxylating ,2.0 h[c] + prpp[c] + quln[c] --> co2[c] + nicrnt[c] + ppi[c],0.0
 NNDPRm,nicotinate nucleotide diphosphorylase carboxylating mitochondrial,2.0 h[m] + prpp[m] + quln[m] --> co2[m] + nicrnt[m] + ppi[m],0.0
@@ -487,11 +487,11 @@ NTD3,5 nucleotidase dCMP ,dcmp[c] + h2o[c] --> dcyt[c] + pi[c],0.0
 NTD4,5 nucleotidase CMP ,cmp[c] + h2o[c] --> cytd[c] + pi[c],0.0
 NTD5,5 nucleotidase dTMP ,dtmp[c] + h2o[c] --> pi[c] + thymd[c],0.0
 NTD6,5 nucleotidase dAMP ,damp[c] + h2o[c] --> dad_2[c] + pi[c],0.0
-OPHBDC6,Octaprenyl hydroxybenzoate decarboxylase,3ophb_5[c] + h[c] --> 2oph_5[c] + co2[c],0.0
+NTD7,5 nucleotidase AMP ,amp[c] + h2o[c] --> adn[c] + pi[c],0.0
+OPHHX6,2 Octaprenylphenol hydroxylase,2oph_5[c] + 0.5 o2[c] --> 2ohph_5[c],0.0
 ORNDC,Ornithine Decarboxylase,h[c] + orn[c] --> co2[c] + ptrc[c],0.0
-PHEt2m,Phenylalanine mitochondrial transport via proton symport,h[m] + phe_L[m] <=> h[c] + phe_L[c],0.0
-ADK4,adentylate kinase ITP ,amp[c] + itp[c] --> adp[c] + idp[c],0.0
-ALATA_Lm,L alanine transaminase mitochondrial,akg[m] + ala_L[m] <=> glu_L[m] + pyr[m],0.0
+ORNTA,ornithine transaminase,akg[c] + orn[c] --> glu5sa[c] + glu_L[c],0.0
+PETHCT,phosphoethanolamine cytidyltransferase,ctp[c] + ethamp[c] + h[c] --> cdpea[c] + ppi[c],0.0
 PEtg_SC,phosphatidylethanolamine Golgi transport yeast specific,pe_SC[c] <=> pe_SC[g],0.0
 NAPRT,NAPRTase,h[c] + nac[c] + prpp[c] --> nicrnt[c] + ppi[c],0.0
 PEtv_SC,phosphatidylethanolamine vacuolar transport yeast specific,pe_SC[c] <=> pe_SC[v],0.0
@@ -502,24 +502,23 @@ PFK_3,phosphofructokinase s7p ,atp[c] + s7p[c] --> adp[c] + h[c] + s17bp[c],0.0
 PGAMT,phosphoglucosamine mutase,gam1p[c] <=> gam6p[c],0.0
 ATPS,ATPase cytosolic,atp[c] + h2o[c] --> adp[c] + h[e] + pi[c],0.0
 MIP2CS324_SC,mannose inositol P 2 ceramide synthase ceramide 3 24C yeast specific,0.01 mipc324_SC[c] + 0.01 ptd1ino_SC[c] <=> 0.01 12dgr_SC[c] + 0.01 mip2c324_SC[c],0.0
+ADK4,adentylate kinase ITP ,amp[c] + itp[c] --> adp[c] + idp[c],0.0
 GLCt1,glucose transport uniport ,glc_D[e] --> glc_D[c],0.0
-ORNTA,ornithine transaminase,akg[c] + orn[c] --> glu5sa[c] + glu_L[c],0.0
+NDPK8,nucleoside diphosphate kinase ATPdADP ,atp[c] + dadp[c] --> adp[c] + datp[c],0.0
 MIP2CS226_SC,mannose inositol P 2 ceramide synthase ceramide 2 24C yeast specific,0.01 mipc226_SC[c] + 0.01 ptd1ino_SC[c] <=> 0.01 12dgr_SC[c] + 0.01 mip2c226_SC[c],0.0
 ADK3m,adentylate kinase GTP ,amp[m] + gtp[m] <=> adp[m] + gdp[m],0.0
-NADPPPSm,NADP phosphatase,h2o[m] + nadp[m] --> nad[m] + pi[m],0.0
-NADK,NAD kinase,atp[c] + nad[c] --> adp[c] + h[c] + nadp[c],0.0
-ADK3,adentylate kinase GTP ,amp[c] + gtp[c] --> adp[c] + gdp[c],0.0
+INSTt2,inositol transport in via proton symport,h[e] + inost[e] --> h[c] + inost[c],0.0
 PGPPAm_SC,phosphatidylglycerol phosphate phosphatase A yeast specific mitochondrial,h2o[m] + 0.01 pgp_SC[m] --> 0.01 pg_SC[m] + pi[m],0.0
 MIP2CS126_SC,mannose inositol P 2 ceramide synthase ceramide 1 26C yeast specific,0.01 mipc126_SC[c] + 0.01 ptd1ino_SC[c] <=> 0.01 12dgr_SC[c] + 0.01 mip2c126_SC[c],0.0
 PHCDm,L 1 pyrroline 3 hydroxy 5 carboxylate dehydrogenase,1p3h5c[m] + 2.0 h2o[m] + nad[m] --> e4hglu[m] + h[m] + nadh[m],0.0
 ADK1m,adenylate kinase mitochondrial,amp[m] + atp[m] <=> 2.0 adp[m],0.0
 PHETRS,Phenylalanyl tRNA synthetase,atp[c] + phe_L[c] + trnaphe[c] --> amp[c] + phetrna[c] + ppi[c],0.0
 PHETRSm,phenylalanyl tRNA synthetase mitochondrial,atp[m] + phe_L[m] + trnaphe[m] --> amp[m] + phetrna[m] + ppi[m],0.0
-PETHCT,phosphoethanolamine cytidyltransferase,ctp[c] + ethamp[c] + h[c] --> cdpea[c] + ppi[c],0.0
+PHEt2m,Phenylalanine mitochondrial transport via proton symport,h[m] + phe_L[m] <=> h[c] + phe_L[c],0.0
+ALATA_Lm,L alanine transaminase mitochondrial,akg[m] + ala_L[m] <=> glu_L[m] + pyr[m],0.0
 PDX5PO,pyridoxine 5 phosphate oxidase,o2[c] + pdx5p[c] <=> h2o2[c] + pydx5p[c],0.0
-PDE5,3 5 cyclic nucleotide phosphodiesterase,35ccmp[c] + h2o[c] --> cmp[c] + h[c],0.0
-PDE4,3 5 cyclic nucleotide phosphodiesterase,35cgmp[c] + h2o[c] --> gmp[c] + h[c],0.0
 MEVK4,mevalonate kinase utp ,mev_R[c] + utp[c] --> 5pmev[c] + h[c] + udp[c],0.0
+PDE5,3 5 cyclic nucleotide phosphodiesterase,35ccmp[c] + h2o[c] --> cmp[c] + h[c],0.0
 ADNUC,adenosine hydrolase,adn[c] + h2o[c] --> ade[c] + rib_D[c],0.0
 ORNt2r,orntithine reversible transport in via proton symport,h[e] + orn[e] <=> h[c] + orn[c],0.0
 ADNCYC,adenylate cyclase,atp[c] --> camp[c] + ppi[c],0.0
@@ -539,9 +538,10 @@ PAtm_SC,phosphatidate reversible transport mitochondrial yeast specific,pa_SC[c]
 ADK4m,adentylate kinase ITP mitochondrial,amp[m] + itp[m] <=> adp[m] + idp[m],0.0
 PCLAD,picolinic acid decarboxylase,cmusa[c] + h[c] --> am6sa[c] + co2[c],0.0
 PDE1,3 5 cyclic nucleotide phosphodiesterase,camp[c] + h2o[c] --> amp[c] + h[c],0.0
-NDPK8,nucleoside diphosphate kinase ATPdADP ,atp[c] + dadp[c] --> adp[c] + datp[c],0.0
+NDPK9,nucleoside diphosphate kinase ATPIDP ,atp[c] + idp[c] --> adp[c] + itp[c],0.0
 PDE2,3 5 cyclic nucleotide phosphodiesterase,35cdamp[c] + h2o[c] --> damp[c] + h[c],0.0
 PDE3,3 5 cyclic nucleotide phosphodiesterase,35cimp[c] + h2o[c] --> h[c] + imp[c],0.0
+PDE4,3 5 cyclic nucleotide phosphodiesterase,35cgmp[c] + h2o[c] --> gmp[c] + h[c],0.0
 PYR5CDm,D1 pyrroline 5 carboxylate dehydrogenase mitochondrial,glu5sa[m] + h2o[m] + nadp[m] --> glu_L[m] + 2.0 h[m] + nadph[m],0.0
 CERS224,Ceramide 2 synthase 24C ,psphings[c] + ttccoa[c] --> cer2_24[c] + coa[c] + h[c],0.0
 PYRt2,pyruvate transport in via proton symport,h[e] + pyr[e] --> h[c] + pyr[c],0.0
@@ -823,7 +823,7 @@ EX_hdcea(e),hexadecenoate n C161 exchange,hdcea[e] --> ,0.0
 EX_gal(e),D Galactose exchange,gal[e] --> ,0.0
 EX_gam6p(e),D Glucosamine 6 phosphate exchange,gam6p[e] --> ,0.0
 EX_gcald(e),Glycolaldehyde exchange,gcald[e] --> ,0.0
-EX_glc(e),D Glucose exchange,glc_D[e] --> ,0.0
+EX_glc(e),D Glucose exchange,glc_D[e] <=> ,0.0
 EX_gln_L(e),L Glutamine exchange,gln_L[e] --> ,0.0
 EX_glu_L(e),L Glutamate exchange,glu_L[e] --> ,0.0
 EX_gly(e),Glycine exchange,gly[e] --> ,0.0

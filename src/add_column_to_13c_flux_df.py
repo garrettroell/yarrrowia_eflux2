@@ -32,7 +32,7 @@ def reaction_ids_to_flux_value(solution, reaction_ids):
     return total_flux
 
 def reaction_id_to_flux(reaction_id, solution_df):
-    # 
+    # check if the reaction is a reverse reaction 
     is_reverse = reaction_id.startswith('reverse_')
 
     # if the reaction is a reverse reaction, remove the reverse_ from the reaction id

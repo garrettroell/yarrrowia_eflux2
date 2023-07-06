@@ -63,7 +63,7 @@ GAPD,glyceraldehyde 3 phosphate dehydrogenase,g3p[c] + nad[c] + pi[c] <=> 13dpg[
 ADK1,adenylate kinase,amp[c] + atp[c] --> 2.0 adp[c],136.66494317225084
 G3PDm,glycerol 3 phosphate dehydrogenase FAD mitochondrial,glyc3p[m] + nad[m] --> dhap[m] + nadh[m],101.82841316773779
 G3PD1irm,glycerol 3 phosphate dehydrogenase NAD mitochondrial,dhap[m] + h[m] + nadh[m] --> glyc3p[m] + nad[m],101.82841316773715
-EX_ocdcea(e),octadecenoate n C181 exchange,ocdcea[e] <=> ,-100.0
+EX_ocdcea(e),octadecenoate n C181 exchange,ocdcea[e] --> ,-100.0
 OCDCEAt,Octadecenoate n C181 transport in via uniport,ocdcea[e] --> ocdcea[c],100.0
 FACOAL181,fatty acid CoA ligase octadecenoate ,atp[c] + coa[c] + ocdcea[c] --> amp[c] + odecoa[c] + ppi[c],99.99999999999999
 coatp,CoA transport peroxisome YL,coa[c] <=> coa[x],-97.54270510480875
@@ -102,9 +102,9 @@ NDPK1,nucleoside diphosphate kinase ATPGDP ,atp[c] + gdp[c] --> adp[c] + gtp[c],
 HSDxi,homoserine dehydrogenase NADH irreversible,aspsa[c] + h[c] + nadh[c] --> hom_L[c] + nad[c],10.009391857953
 ASADi,aspartate semialdehyde dehydrogenase irreversible,4pasp[c] + h[c] + nadph[c] --> aspsa[c] + nadp[c] + pi[c],10.009391857953
 ASPKi,aspartate kinase irreversible,asp_L[c] + atp[c] --> 4pasp[c] + adp[c],10.009391857953
-EX_pi(e),Phosphate exchange,pi[e] <=> ,-9.798241088089725
-PIt2r,phosphate reversible transport via symport,h[e] + pi[e] <=> h[c] + pi[c],9.798241088089725
 EX_h(e),H exchange,h[e] <=> ,-9.798241088089725
+PIt2r,phosphate reversible transport via symport,h[e] + pi[e] <=> h[c] + pi[c],9.798241088089725
+EX_pi(e),Phosphate exchange,pi[e] <=> ,-9.798241088089725
 PRPPS,phosphoribosylpyrophosphate synthetase,atp[c] + r5p[c] <=> amp[c] + h[c] + prpp[c],9.24495100001912
 THRS,threonine synthase,h2o[c] + phom[c] --> pi[c] + thr_L[c],8.727374545553321
 HSK,homoserine kinase,atp[c] + hom_L[c] --> adp[c] + h[c] + phom[c],8.727374545553321
@@ -217,13 +217,13 @@ PHETA1,phenylalanine transaminase,akg[c] + phe_L[c] <=> glu_L[c] + phpyr[c],-2.3
 PPNDH,prephenate dehydratase,h[c] + pphn[c] --> co2[c] + h2o[c] + phpyr[c],2.3932323001479667
 UMPK,UMP kinase,atp[c] + ump[c] <=> adp[c] + udp[c],2.260746696265446
 GRTT,geranyltranstransferase,grdp[c] + ipdp[c] --> frdp[c] + ppi[c],2.2190201170997708
-DMATT,dimethylallyltranstransferase,dmpp[c] + ipdp[c] --> grdp[c] + ppi[c],2.21902011709977
 IPDDI,isopentenyl diphosphate D isomerase,ipdp[c] <=> dmpp[c],2.21902011709977
+DMATT,dimethylallyltranstransferase,dmpp[c] + ipdp[c] --> grdp[c] + ppi[c],2.21902011709977
 GND,phosphogluconate dehydrogenase,6pgc[c] + nadp[c] --> co2[c] + nadph[c] + ru5p_D[c],2.131219031359397
 PGL,6 phosphogluconolactonase,6pgl[c] + h2o[c] --> 6pgc[c] + h[c],2.131219031359397
+G6PDH2er,glucose 6 phosphate dehydrogenase endoplasmic reticulum,g6p[r] + nadp[r] --> 6pgl[r] + h[r] + nadph[r],2.1312190313593966
 6PGLter,6 phospho D glucono 1 5 lactone endoplasmic reticular transport via diffusion,6pgl[c] <=> 6pgl[r],-2.1312190313593966
 G6Pter,glucose 6 phosphate endoplasmic reticular transport via diffusion,g6p[c] <=> g6p[r],2.1312190313593966
-G6PDH2er,glucose 6 phosphate dehydrogenase endoplasmic reticulum,g6p[r] + nadp[r] --> 6pgl[r] + h[r] + nadph[r],2.1312190313593966
 DASYN_SC,CDP Diacylglycerol synthetase yeast specific,ctp[c] + h[c] + 0.01 pa_SC[c] <=> 0.01 cdpdag_SC[c] + ppi[c],2.0093197674277326
 SO4ti,sulfate irreversible uniport,so4[e] --> so4[c],1.9669557418914183
 EX_so4(e),Sulfate exchange,so4[e] <=> ,-1.9669557418914183
@@ -253,9 +253,9 @@ PPND2,prephenate dehydrogenase NADP ,nadp[c] + pphn[c] --> 34hpp[c] + co2[c] + n
 TYRTA,tyrosine transaminase,akg[c] + tyr_L[c] <=> 34hpp[c] + glu_L[c],-1.196529705123297
 TALA,transaldolase,g3p[c] + s7p[c] <=> e4p[c] + f6p[c],-1.1538417634248574
 TKT1,transketolase,r5p[c] + xu5p_D[c] <=> g3p[c] + s7p[c],-1.1538417634248574
-SQ23EPXter,Squalene 2 3 epoxide endoplamic reticular transport,Ssq23epx[r] <=> Ssq23epx[c],1.1095100585498854
 LNSTLS,lanosterol synthase,Ssq23epx[c] --> lanost[c],1.1095100585498854
 FTHFL,formate tetrahydrofolate ligase,atp[c] + for[c] + thf[c] --> 10fthf[c] + adp[c] + pi[c],1.1095100585498854
+SQ23EPXter,Squalene 2 3 epoxide endoplamic reticular transport,Ssq23epx[r] <=> Ssq23epx[c],1.1095100585498854
 SQLEr,Squalene epoxidase endoplasmic reticular NADP ,h[r] + nadph[r] + o2[r] + sql[r] --> Ssq23epx[r] + h2o[r] + nadp[r],1.1095100585498854
 LNS14DM,cytochrome P450 lanosterol 14 alpha demethylase NADP ,2.0 h[c] + lanost[c] + 3.0 nadph[c] + 3.0 o2[c] --> 44mctr[c] + for[c] + 4.0 h2o[c] + 3.0 nadp[c],1.1095100585498854
 SQLter,squalene endoplamic reticular transport,sql[c] <=> sql[r],1.1095100585498854
@@ -823,7 +823,7 @@ EX_hdcea(e),hexadecenoate n C161 exchange,hdcea[e] --> ,0.0
 EX_gal(e),D Galactose exchange,gal[e] --> ,0.0
 EX_gam6p(e),D Glucosamine 6 phosphate exchange,gam6p[e] --> ,0.0
 EX_gcald(e),Glycolaldehyde exchange,gcald[e] --> ,0.0
-EX_glc(e),D Glucose exchange,glc_D[e] --> ,0.0
+EX_glc(e),D Glucose exchange,glc_D[e] <=> ,0.0
 EX_gln_L(e),L Glutamine exchange,gln_L[e] --> ,0.0
 EX_glu_L(e),L Glutamate exchange,glu_L[e] --> ,0.0
 EX_gly(e),Glycine exchange,gly[e] --> ,0.0
