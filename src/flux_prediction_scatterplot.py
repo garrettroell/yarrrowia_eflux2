@@ -3,6 +3,8 @@ import numpy as np
 from scipy.stats import linregress
 from matplotlib import pyplot as plt
 from matplotlib.offsetbox import (OffsetImage, AnnotationBbox, TextArea)
+from IPython.display import display
+
 
 # This function takes in a dataframe of flux values, and makes a scatter plot of
 #  predicted values vs. measured values
@@ -73,11 +75,18 @@ def flux_prediction_scatterplot(
     x = np.linspace(*ax.get_xlim())
     ax.plot(x, x, ls="--", c=".3")
 
-    # calculate r-squared values using 
+    # calculate r-squared values using all the values
     _, _, r_squared, _, _ = linregress(fluxes_df.loc[:, '13C_mfa_flux'], fluxes_df.loc[:, prediction_column_name])
 
+    # calculate r-squared value without ATPM
+    fluxes_df_no_atpm = fluxes_df.copy()
+    fluxes_df_no_atpm = fluxes_df_no_atpm[fluxes_df_no_atpm['reaction_ids'] != 'ATPM']
+    _, _, r_squared_no_atpm, _, _ = linregress(fluxes_df_no_atpm.loc[:, '13C_mfa_flux'], fluxes_df_no_atpm.loc[:, prediction_column_name])
+
+
     # add labels to the plot
-    plt.title(r''+ r"$\bf{" + str(substrate) + r"\;" + str(method) + "}$"  + ': ' + f"$R^2$={r_squared:.2F}", fontsize=24)
+    plt.title(r''+ r"$\bf{" + str(substrate) + r"\;" + str(method) + "}$"  + ': ' + f"$R^2$={r_squared_no_atpm:.2F}*", fontsize=24)
+    # plt.title(r''+ r"$\bf{" + str(substrate) + r"\;" + str(method) + "}$"  + ': ' + f"$R^2$={r_squared_no_atpm:.2F} ({r_squared:.2F})", fontsize=24)
     plt.ylabel(f'{method} Flux', fontsize=22)
     plt.xlabel('13C-MFA Flux', fontsize=22)
     plt.legend(fontsize=10)
