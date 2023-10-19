@@ -10,10 +10,13 @@ def get_pfba_biomass_flux(model=None, substrate=''):
     # update the uptake reaction id based on the substrate
     if substrate == 'glucose':
         uptake_reaction_id = 'EX_glc_e'
+        biomass_reaction_id = 'biomass_glucose'
     elif substrate == 'glycerol':
         uptake_reaction_id = 'EX_glyc_e'
+        biomass_reaction_id = 'biomass_glucose'
     else:
         uptake_reaction_id = 'EX_ocdcea_e'
+        biomass_reaction_id = 'biomass_oleic_acid'
 
     # update the media to minimal medium with the specified sole carbon source
     medium = model.medium
@@ -31,13 +34,7 @@ def get_pfba_biomass_flux(model=None, substrate=''):
 
     # find the optimal solution
     uptake_flux = -10 if substrate == 'oleic_acid' else -100
-    pfba_solution = sd.fba(model, constraints=f'{uptake_reaction_id} = {uptake_flux}', obj='biomass_C', obj_sense='maximize', pfba=1)
-    biomass_flux = pfba_solution['biomass_C']
-
-    # # capitalize the substrate
-    # print(f'{substrate.capitalize()} uptake flux: {uptake_flux}.')
-    # print(f'Maximum biomass flux: {biomass_flux}.')
-    # print(f'The number of active reactions in pFBA: {sum([abs(flux) > 0.1 for flux in pfba_solution.fluxes.values()])}.')
-    # print()
+    pfba_solution = sd.fba(model, constraints=f'{uptake_reaction_id} = {uptake_flux}', obj=biomass_reaction_id, obj_sense='maximize', pfba=1)
+    biomass_flux = pfba_solution[biomass_reaction_id]
 
     return biomass_flux if substrate != 'oleic_acid' else 10 * biomass_flux

@@ -72,10 +72,13 @@ def get_pfba_fva_df(
     # update the uptake reaction id based on the substrate
     if substrate == 'glucose':
         uptake_reaction_id = 'EX_glc_e'
+        biomass_reaction_id = 'biomass_glucose'
     elif substrate == 'glycerol':
         uptake_reaction_id = 'EX_glyc_e'
+        biomass_reaction_id = 'biomass_glucose'
     else:
         uptake_reaction_id = 'EX_ocdcea_e'
+        biomass_reaction_id = 'biomass_oleic_acid'
 
     # update the media to minimal medium with the specified sole carbon source
     medium = model.medium
@@ -95,9 +98,9 @@ def get_pfba_fva_df(
     uptake_flux = -10 if substrate == 'oleic_acid' else -100
     biomass_cutoff = 0.1 * biomass_cutoff if substrate == 'oleic_acid' else biomass_cutoff
 
-    pfba_solution = sd.fba(model, constraints=f'{uptake_reaction_id} = {uptake_flux}', obj='biomass_C', obj_sense='maximize', pfba=1)
+    pfba_solution = sd.fba(model, constraints=f'{uptake_reaction_id} = {uptake_flux}', obj=biomass_reaction_id, obj_sense='maximize', pfba=1)
 
-    constraint_string = f'{uptake_reaction_id} = {uptake_flux}, biomass_C >= {biomass_cutoff}'
+    constraint_string = f'{uptake_reaction_id} = {uptake_flux}, {biomass_reaction_id} >= {biomass_cutoff}'
 
     print(f'Running pFBA FVA with the constraints: {constraint_string}:')
 
@@ -142,10 +145,13 @@ def get_eflux2_fva_df(
     # update the uptake reaction id based on the substrate
     if substrate == 'glucose':
         uptake_reaction_id = 'EX_glc_e'
+        biomass_reaction_id = 'biomass_glucose'
     elif substrate == 'glycerol':
         uptake_reaction_id = 'EX_glyc_e'
+        biomass_reaction_id = 'biomass_glucose'
     else:
         uptake_reaction_id = 'EX_ocdcea_e'
+        biomass_reaction_id = 'biomass_oleic_acid'
 
     # set the flux bounds for each reaction using the transcriptomics data    
     for r in model.reactions:
@@ -172,10 +178,9 @@ def get_eflux2_fva_df(
     model.medium = medium
 
     # find the optimal solution
-    eflux2_solution = sd.fba(model, obj='biomass_C', obj_sense='maximize', pfba=1)
+    eflux2_solution = sd.fba(model, obj=biomass_reaction_id, obj_sense='maximize', pfba=1)
 
     uptake_flux = eflux2_solution[uptake_reaction_id]
-    # biomass_flux = eflux2_solution['biomass_C']
 
     # calculate the scale factor to normalize cutoff to 100 uptake
     normalized_fva_biomass_cutoff = -(uptake_flux * biomass_cutoff) / 100
@@ -183,7 +188,7 @@ def get_eflux2_fva_df(
     # calculate the scale factor to normalize to 100 uptake
     scale_factor = -100 / uptake_flux
 
-    constraint_string = f'{uptake_reaction_id} = {uptake_flux}, biomass_C >= {normalized_fva_biomass_cutoff}'
+    constraint_string = f'{uptake_reaction_id} = {uptake_flux}, {biomass_reaction_id} >= {normalized_fva_biomass_cutoff}'
 
     print(f'Running {substrate} E-Flux2 FVA with the constraints: {constraint_string}:')
 

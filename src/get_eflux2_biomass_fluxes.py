@@ -31,10 +31,13 @@ def get_eflux2_biomass_flux(
     # update the uptake reaction id based on the substrate
     if substrate == 'glucose':
         uptake_reaction_id = 'EX_glc_e'
+        biomass_reaction_id = 'biomass_glucose'
     elif substrate == 'glycerol':
         uptake_reaction_id = 'EX_glyc_e'
+        biomass_reaction_id = 'biomass_glucose'
     else:
         uptake_reaction_id = 'EX_ocdcea_e'
+        biomass_reaction_id = 'biomass_oleic_acid'
 
     # set the flux bounds for each reaction using the transcriptomics data    
     for r in model.reactions:
@@ -61,27 +64,15 @@ def get_eflux2_biomass_flux(
     model.medium = medium
 
     # find the optimal solution
-    eflux2_solution = sd.fba(model, obj='biomass_C', obj_sense='maximize', pfba=1)
+    eflux2_solution = sd.fba(model, obj=biomass_reaction_id, obj_sense='maximize', pfba=1)
 
     uptake_flux = eflux2_solution[uptake_reaction_id]
-    biomass_flux = eflux2_solution['biomass_C']
+    biomass_flux = eflux2_solution[biomass_reaction_id]
 
     # calculate the scale factor to normalize to 100 uptake
     scale_factor = -100 / uptake_flux
 
-    normalized_uptake_flux = scale_factor * uptake_flux
     normalized_biomass_flux = scale_factor * biomass_flux
-
-    # print data before normalization
-    # print(f'Pre-normalized {substrate} uptake flux: {uptake_flux}.')
-    # print(f'Pre-normalized max biomass flux: {biomass_flux}.')
-
-    # print(f'Normalized {substrate} uptake flux: {normalized_uptake_flux}.')
-    # print(f'Normalized max biomass flux: {normalized_biomass_flux}.')
-
-    # print data after normalization
-    # print(f'The number of active reactions in eflux2: {sum([abs(scale_factor * flux) > 0.1 for flux in eflux2_solution.fluxes.values()])}.')
-    # print()
 
     return normalized_biomass_flux
 
