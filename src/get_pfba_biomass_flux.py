@@ -16,7 +16,7 @@ def get_pfba_biomass_flux(model=None, substrate=''):
         biomass_reaction_id = 'biomass_glucose'
     else:
         uptake_reaction_id = 'EX_ocdcea_e'
-        biomass_reaction_id = 'biomass_oleic_acid'
+        biomass_reaction_id = 'biomass_oil'
 
     # update the media to minimal medium with the specified sole carbon source
     medium = model.medium

@@ -78,7 +78,7 @@ def get_pfba_fva_df(
         biomass_reaction_id = 'biomass_glucose'
     else:
         uptake_reaction_id = 'EX_ocdcea_e'
-        biomass_reaction_id = 'biomass_oleic_acid'
+        biomass_reaction_id = 'biomass_oil'
 
     # update the media to minimal medium with the specified sole carbon source
     medium = model.medium
@@ -151,7 +151,7 @@ def get_eflux2_fva_df(
         biomass_reaction_id = 'biomass_glucose'
     else:
         uptake_reaction_id = 'EX_ocdcea_e'
-        biomass_reaction_id = 'biomass_oleic_acid'
+        biomass_reaction_id = 'biomass_oil'
 
     # set the flux bounds for each reaction using the transcriptomics data    
     for r in model.reactions:
