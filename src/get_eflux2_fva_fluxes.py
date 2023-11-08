@@ -11,7 +11,6 @@ def get_eflux2_fva_fluxes(
     fva_df_list = []
 
     # run pfba here
-    # (Please help me add pfba here)
     pfba_fva_df = get_pfba_fva_df(
         model=model, 
         substrate=substrate,
@@ -48,10 +47,6 @@ def get_eflux2_fva_fluxes(
 
     # Combine all dataframes into a single dataframe
     combined_df = pd.concat(fva_df_list, axis=1)
-
-    # Assuming 'reaction_id', 'reaction_name', and 'full_reaction' are common columns across all dataframes
-    # and they are identical, we can drop the duplicates and keep only one set of these columns
-    common_cols = ['reaction_id', 'reaction_name', 'full_reaction']
     combined_df = combined_df.loc[:, ~combined_df.columns.duplicated()]
 
     # sort the rows by absolute value of {substrate}_pfba_flux
@@ -109,6 +104,7 @@ def get_pfba_fva_df(
       model, 
       constraints=constraint_string,
     )
+    print('ran pfba fva')
 
     # maybe scale the fluxes to 100 uptake for oleic acid here
     if substrate == 'oleic_acid':
@@ -179,6 +175,9 @@ def get_eflux2_fva_df(
 
     # find the optimal solution
     eflux2_solution = sd.fba(model, obj=biomass_reaction_id, obj_sense='maximize', pfba=1)
+    
+    print(f'transcript constrained uptake flux: {eflux2_solution[uptake_reaction_id]}')
+    print(f'transcript constrained biomass flux: {eflux2_solution[biomass_reaction_id]}')
 
     uptake_flux = eflux2_solution[uptake_reaction_id]
 
@@ -190,13 +189,12 @@ def get_eflux2_fva_df(
 
     constraint_string = f'{uptake_reaction_id} = {uptake_flux}, {biomass_reaction_id} >= {normalized_fva_biomass_cutoff}'
 
-    print(f'Running {substrate} E-Flux2 FVA with the constraints: {constraint_string}:')
-
     # run E-Flux2 FVA with larger biomass flux constraint 
     eflux_2_fva_solution = sd.fva(
       model, 
       constraints=constraint_string,
     )
+    print('ran eflux2 fva')
 
     # normalize the fluxes to 100
     eflux_2_fva_solution = eflux_2_fva_solution * scale_factor

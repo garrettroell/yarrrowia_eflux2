@@ -118,6 +118,9 @@ def make_4_boxplot_grid(df, substrate):
             make_boxplot(ax[subplot_index], mfa_stats, eflux2_1_stats, eflux2_2_stats, eflux2_3_stats, show_y_label, title=reaction,)
             subplot_index += 1
 
+    # Save the plot
+    plt.savefig(f'../figures/boxplot_grid_{substrate}.png', dpi=300)
+    
     # Show the plot
     plt.show()
 

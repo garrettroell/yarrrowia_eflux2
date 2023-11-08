@@ -36,7 +36,7 @@ def reaction_ids_to_flux_value(genome_scale_df, reaction_ids, column_name):
     return total_flux
 
 def reaction_id_to_flux(reaction_id, genome_scale_df, column_name):
-    print(reaction_id)
+
     # check if the reaction is a reverse reaction 
     is_reverse = reaction_id.startswith('reverse_')
 
