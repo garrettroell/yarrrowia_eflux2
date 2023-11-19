@@ -43,18 +43,21 @@ def get_pfba_fva_df(
     uptake_flux = -10 if substrate == 'oleic_acid' else -100
     biomass_cutoff = 0.1 * biomass_cutoff if substrate == 'oleic_acid' else biomass_cutoff
 
-    # define constraint string
-    constraint_string = f'{uptake_reaction_id} = {uptake_flux}, {biomass_reaction_id} >= {biomass_cutoff}, {other_biomass_id} = 0, biomass_C = 0, biomass_N = 0'
+    # define constraint strings
+    pfba_constraint_string = f'{uptake_reaction_id} = {uptake_flux}, {other_biomass_id} = 0, biomass_C = 0, biomass_N = 0'
+    fva_constraint_string = f'{uptake_reaction_id} = {uptake_flux}, {biomass_reaction_id} >= {biomass_cutoff}, {other_biomass_id} = 0, biomass_C = 0, biomass_N = 0'
+
+    print(f'Running pFBA with the constraints: {pfba_constraint_string}:')
 
     # run pFBA to get the pFBA flux values
-    pfba_solution = sd.fba(model, constraints=constraint_string, obj=biomass_reaction_id, obj_sense='maximize', pfba=1)
+    pfba_solution = sd.fba(model, constraints=pfba_constraint_string, obj=biomass_reaction_id, obj_sense='maximize', pfba=1)
 
-    print(f'Running pFBA FVA with the constraints: {constraint_string}:')
+    print(f'Running pFBA FVA with the constraints: {fva_constraint_string}:')
 
     # run FVA to the get the pFBA flux ranges
     pfba_fva_solution = sd.fva(
       model, 
-      constraints=constraint_string,
+      constraints=fva_constraint_string,
     )
     print('ran pfba fva')
 
