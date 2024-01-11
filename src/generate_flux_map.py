@@ -10,8 +10,14 @@ def generate_flux_map(
     flux_column=None, 
     title_string='',
     file_name='',
+    use_mannitol_map=False
 ):
     flux_df = flux_df.copy()
+
+    if use_mannitol_map:
+        unlabeled_image = plt.imread('../figures/templates/flux_map_mannitol.png')
+    else:
+        unlabeled_image = plt.imread('../figures/templates/flux_map_1_carbon_source.png')
 
     # add a rows for computed values if the flux column is a single column
     if isinstance(flux_column, str):
@@ -49,8 +55,6 @@ def generate_flux_map(
             new_row_df = pd.DataFrame([new_row])
             new_row_df = new_row_df.reindex(columns=flux_df.columns)
             flux_df = pd.concat([flux_df, new_row_df], ignore_index=True)
-
-    unlabeled_image = plt.imread('../figures/templates/flux_map_1_carbon_source.png')
 
     # calculate the figure size based on the image dimensions and desired DPI
     dpi = 50  # for example, set this to your preferred DPI
