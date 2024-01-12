@@ -1,6 +1,6 @@
 # _Yarrowia lipolytica_ E-Flux2
 
-This repository contains notebooks that run FBA and the E-Flux2 transcript to flux algorithm for Yarrowia lipolytica consuming glucose, glycerol, and oleic acid. The model's predictions were generated using constraint based reconstruction and analysis (COBRA) toolbox.
+This project is a series of Jupyter notebooks focused on the analysis of the metabolism of the oleaginous yeast, Yarrowia lipolytica, when grown with glucose, glycerol, and oleic acid. The analysis ranges from growth parameter calculations to transcriptomic analysis, utilizing 13C-metabolic flux analysis a Genome-Scale Model (GSM).
 
 - [System Requirements](#system-requirements)
 - [Instructions for use](#instructions-for-use)
@@ -26,7 +26,13 @@ To run the code in this repository use the following commands:
 
 ## Summary of notebooks
 
-- Notebook A: Generates FBA results for glucose, glycerol, oleic acid, and acetate
+- Notebook A: Experimental Growth Parameter Calculations
+- Notebook B: Find Feasible Bounds for 13C-MFA using GSM and observed biomass yield
+- Notebook C: Find GSM flux bounds by constraining the GSM with 13C-MFA
+- Notebook D: Analysis of NADPH and Acetyl-CoA sources and sinks
+- Notebook E: Comparative Transcriptomic Analysis in Y. lipolytica
+- Supplemental Notebook A: Gene Annotation Correction in GSM iYLI647
+- Supplemental Notebook B: Refining Yarrowia Biomass Reaction with Strain-Specific Data
 
 ## Reference
 

@@ -140,4 +140,4 @@ def generate_flux_map(
     # save the figure with a white background and no transparency
     plt.savefig(file_name, bbox_inches='tight', pad_inches=0, facecolor='white', transparent=False)
 
-    display(Image(file_name, width=1000))
+    return Image(file_name, width=1000)
