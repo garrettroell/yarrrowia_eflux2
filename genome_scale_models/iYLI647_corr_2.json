@@ -27091,6 +27091,22 @@
 "lower_bound":0.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":""
+},
+{
+"id":"MALS",
+"name":"Malate synthase",
+"metabolites":{
+"accoa[c]":-1.0,
+"coa[c]":1.0,
+"glx[c]":-1.0,
+"h2o[c]":-1.0,
+"h[c]":1.0,
+"mal_L[c]":1.0
+},
+"lower_bound":0,
+"upper_bound":1000,
+"gene_reaction_rule":"",
+"subsystem":"Glyoxylate metabolism"
 }
 ],
 "genes":[
