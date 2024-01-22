@@ -40,6 +40,7 @@ def add_gsm_bounds_from_cutoff(model=None, central_rxn_df=None, substrate=None, 
 
     # define the constraints string
     constraints = f'{uptake_string}, {biomass_string}'
+    print(constraints)
 
     gsm_lbs = []
     gsm_ubs = []

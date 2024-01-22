@@ -1,0 +1,72 @@
+Reaction,Name,Equation,Category
+ASADi,aspartate semialdehyde dehydrogenase irreversible,4pasp[c] + h[c] + nadph[c] --> aspsa[c] + nadp[c] + pi[c],Other
+3DSPHR,3 Dehydrosphinganine reductase,3dsphgn[c] + h[c] + nadph[c] --> nadp[c] + sphgn[c],Other
+AASAD1,L aminoadipate semialdehyde dehydrogenase NADPH ,L2aadp[c] + atp[c] + h[c] + nadph[c] --> L2aadp6sa[c] + amp[c] + nadp[c] + ppi[c],Other
+ADHAPR_SC,acyldihydroxyacetonephosphate reductase yeast specific,0.01 1agly3p_SC[c] + h[c] + nadph[c] --> 0.01 1ag3p_SC[c] + nadp[c],pentose phosphate
+ALCD19y,alcohol dehydrogenase glycerol NADP ,glyald[c] + h[c] + nadph[c] --> glyc[c] + nadp[c],Other
+ALDD20y,aldehyde dehydrogenase indole 3 acetaldehyde NADP ,h2o[c] + id3acald[c] + nadp[c] --> 2.0 h[c] + ind3ac[c] + nadph[c],Other
+APRAUR,5 amino 6 5 phosphoribosylamino uracil reductase,5apru[c] + h[c] + nadph[c] --> 5aprbu[c] + nadp[c],Other
+ARAB1D2,D arabinose 1 dehydrogenase NADP ,arab_D[c] + nadp[c] --> Dara14lac[c] + h[c] + nadph[c],Other
+ARABR,arabinose reductase,arab_L[c] + h[c] + nadph[c] --> abt[c] + nadp[c],Other
+P5CR,pyrroline 5 carboxylate reductase,1pyr5c[c] + 2.0 h[c] + nadph[c] --> nadp[c] + pro_L[c],Other
+C22STDS,C 22 sterol desaturase NADP ,ergtrol[c] + h[c] + nadph[c] + o2[c] --> ergtetrol[c] + 2.0 h2o[c] + nadp[c],Other
+SULR,sulfite reductase NADPH2 ,3.0 h2o[c] + h2s[c] + 3.0 nadp[c] <=> 5.0 h[c] + 3.0 nadph[c] + so3[c],Other
+DESAT16,Palmitoyl CoA desaturase n C160CoA n C161CoA ,h[c] + nadph[c] + o2[c] + pmtcoa[c] --> 2.0 h2o[c] + hdcoa[c] + nadp[c],Other
+DESAT18,stearoyl CoA desaturase n C180CoA n C181CoA ,h[c] + nadph[c] + o2[c] + stcoa[c] --> 2.0 h2o[c] + nadp[c] + odecoa[c],Other
+DESAT18_2,Oleoyl CoA desaturase n C181CoA n C182CoA ,h[c] + nadph[c] + o2[c] + odecoa[c] --> 2.0 h2o[c] + nadp[c] + ocdycacoa[c],Other
+C5STDS,C 5 sterol desaturase,epist[c] + h[c] + nadph[c] + o2[c] --> ergtrol[c] + 2.0 h2o[c] + nadp[c],Other
+FAS100COA,fatty acyl CoA synthase n C100CoA ,3.0 h[c] + malcoa[c] + 2.0 nadph[c] + occoa[c] --> co2[c] + coa[c] + dcacoa[c] + h2o[c] + 2.0 nadp[c],biomass formation
+FAS120COA,fatty acyl CoA synthase n C120CoA ,dcacoa[c] + 3.0 h[c] + malcoa[c] + 2.0 nadph[c] --> co2[c] + coa[c] + ddcacoa[c] + h2o[c] + 2.0 nadp[c],biomass formation
+CERH124,Ceramide 1 hydroxylase 24C ,cer1_24[c] + h[c] + nadph[c] + o2[c] --> cer2_24[c] + h2o[c] + nadp[c],Other
+CERH126,Ceramide 1 hydroxylase 26C ,cer1_26[c] + h[c] + nadph[c] + o2[c] --> cer2_26[c] + h2o[c] + nadp[c],Other
+CERS2_24,Ceramide 2 synthase 24C ,cer1_24[c] + h[c] + nadph[c] + o2[c] --> cer2__24[c] + h2o[c] + nadp[c],biomass formation
+CERS2_26,Ceramide 2 synthase 26C ,cer1_26[c] + h[c] + nadph[c] + o2[c] --> cer2__26[c] + h2o[c] + nadp[c],biomass formation
+CERS324,Ceramide 3 synthase 24C ,cer2_24[c] + h[c] + nadph[c] + o2[c] --> cer3_24[c] + h2o[c] + nadp[c],biomass formation
+CERS326,Ceramide 3 synthase 26C ,cer2_26[c] + h[c] + nadph[c] + o2[c] --> cer3_26[c] + h2o[c] + nadp[c],biomass formation
+FAS140COA,fatty acyl CoA synthase n C140CoA ,ddcacoa[c] + 3.0 h[c] + malcoa[c] + 2.0 nadph[c] --> co2[c] + coa[c] + h2o[c] + 2.0 nadp[c] + tdcoa[c],biomass formation
+FAS160COA,fatty acyl CoA synthase n C160CoA ,3.0 h[c] + malcoa[c] + 2.0 nadph[c] + tdcoa[c] --> co2[c] + coa[c] + h2o[c] + 2.0 nadp[c] + pmtcoa[c],biomass formation
+FAS180COA,fatty acyl CoA synthase n C180CoA ,3.0 h[c] + malcoa[c] + 2.0 nadph[c] + pmtcoa[c] --> co2[c] + coa[c] + h2o[c] + 2.0 nadp[c] + stcoa[c],biomass formation
+FAS80COA_L,fatty acyl CoA synthase n C80CoA lumped reaction,accoa[c] + 9.0 h[c] + 3.0 malcoa[c] + 6.0 nadph[c] --> 3.0 co2[c] + 3.0 coa[c] + 3.0 h2o[c] + 6.0 nadp[c] + occoa[c],biomass formation
+DHFRi,dihydrofolate reductase irreversible ,dhf[c] + h[c] + nadph[c] --> nadp[c] + thf[c],Other
+GLUDy,glutamate dehydrogenase NADP ,glu_L[c] + h2o[c] + nadp[c] <=> akg[c] + h[c] + nadph[c] + nh4[c],Other
+DESAT14,Myristicoyl CoA desaturase n C140CoA n C141CoA ,h[c] + nadph[c] + o2[c] + tdcoa[c] --> 2.0 h2o[c] + nadp[c] + tdecoa[c],Other
+HSDyi,homoserine dehydrogenase NADP irreversible,aspsa[c] + h[c] + nadph[c] --> hom_L[c] + nadp[c],Other
+DPR,2 dehydropantoate 2 reductase,2dhp[c] + h[c] + nadph[c] --> nadp[c] + pant_R[c],Other
+FAS100,fatty acid synthase n C100 ,3.0 h[c] + malcoa[c] + 2.0 nadph[c] + octa[c] --> co2[c] + coa[c] + dca[c] + h2o[c] + 2.0 nadp[c],biomass formation
+FAS120,fatty acid synthase n C120 ,dca[c] + 3.0 h[c] + malcoa[c] + 2.0 nadph[c] --> co2[c] + coa[c] + ddca[c] + h2o[c] + 2.0 nadp[c],biomass formation
+FAS140,fatty acid synthase n C140 ,ddca[c] + 3.0 h[c] + malcoa[c] + 2.0 nadph[c] --> co2[c] + coa[c] + h2o[c] + 2.0 nadp[c] + ttdca[c],biomass formation
+FAS160,fatty acid synthase n C160 ,3.0 h[c] + malcoa[c] + 2.0 nadph[c] + ttdca[c] --> co2[c] + coa[c] + h2o[c] + hdca[c] + 2.0 nadp[c],biomass formation
+FAS180,fatty acid synthase n C180 ,3.0 h[c] + hdca[c] + malcoa[c] + 2.0 nadph[c] --> co2[c] + coa[c] + h2o[c] + 2.0 nadp[c] + ocdca[c],biomass formation
+FAS240_L,fatty acid synthase n C240 lumped reaction,9.0 h[c] + 3.0 malcoa[c] + 6.0 nadph[c] + ocdca[c] --> 3.0 co2[c] + 3.0 coa[c] + 3.0 h2o[c] + 6.0 nadp[c] + ttc[c],biomass formation
+FAS260,fatty acid synthase n C260 ,3.0 h[c] + malcoa[c] + 2.0 nadph[c] + ttc[c] --> co2[c] + coa[c] + h2o[c] + hexc[c] + 2.0 nadp[c],biomass formation
+FAS80_L,fatty acid synthase n C80 lumped reaction,accoa[c] + 8.0 h[c] + 3.0 malcoa[c] + 6.0 nadph[c] --> 3.0 co2[c] + 4.0 coa[c] + 2.0 h2o[c] + 6.0 nadp[c] + octa[c],biomass formation
+G5SD,glutamate 5 semialdehyde dehydrogenase,glu5p[c] + h[c] + nadph[c] --> glu5sa[c] + nadp[c] + pi[c],Other
+G6PDH2,glucose 6 phosphate dehydrogenase,g6p[c] + nadp[c] --> 6pgl[c] + h[c] + nadph[c],pentose phosphate
+GND,phosphogluconate dehydrogenase,6pgc[c] + nadp[c] --> co2[c] + nadph[c] + ru5p_D[c],Other
+GTHO,glutathione oxidoreductase,gthox[c] + h[c] + nadph[c] --> 2.0 gthrd[c] + nadp[c],Other
+HMGCOAR,Hydroxymethylglutaryl CoA reductase,coa[c] + mev_R[c] + 2.0 nadp[c] <=> 2.0 h[c] + hmgcoa[c] + 2.0 nadph[c],Other
+HPROb,L hydroxyproline reductase NADP ,1p3h5c[c] + 2.0 h[c] + nadph[c] --> 4hpro_LT[c] + nadp[c],Other
+ICDHy,isocitrate dehydrogenase NADP ,icit[c] + nadp[c] --> akg[c] + co2[c] + nadph[c],TCA cycle
+KYN3OX,kynurenine 3 monooxygenase,Lkynr[c] + h[c] + nadph[c] + o2[c] --> h2o[c] + hLkynr[c] + nadp[c],Other
+C14STR,C 14 sterol reductase,44mctr[c] + h[c] + nadph[c] --> 44mzym[c] + nadp[c],Other
+C3STKR1,C 3 sterol keto reductase 4 methylzymosterol ,4mzym_int2[c] + h[c] + nadph[c] --> 4mzym[c] + nadp[c],Other
+C3STKR2,C 3 sterol keto reductase zymosterol ,h[c] + nadph[c] + zym_int2[c] --> nadp[c] + zymst[c],Other
+C4STMO1,C 4 sterol methyl oxidase 4 4 dimethylzymosterol ,44mzym[c] + 3.0 h[c] + 3.0 nadph[c] + 3.0 o2[c] --> 4mzym_int1[c] + 4.0 h2o[c] + 3.0 nadp[c],Other
+C4STMO2,C 4 sterol methyl oxidase 4 methylzymosterol ,4mzym[c] + 3.0 h[c] + 3.0 nadph[c] + 3.0 o2[c] --> 4.0 h2o[c] + 3.0 nadp[c] + zym_int1[c],Other
+LNS14DM,cytochrome P450 lanosterol 14 alpha demethylase NADP ,2.0 h[c] + lanost[c] + 3.0 nadph[c] + 3.0 o2[c] --> 44mctr[c] + for[c] + 4.0 h2o[c] + 3.0 nadp[c],Other
+SQLS,Squalene synthase,2.0 frdp[c] + h[c] + nadph[c] --> nadp[c] + 2.0 ppi[c] + sql[c],biomass formation
+SACCD1,saccharopine dehydrogenase NADP L glutamate forming ,L2aadp6sa[c] + glu_L[c] + h[c] + nadph[c] <=> h2o[c] + nadp[c] + saccrp_L[c],Other
+PSPHS,Phytosphingosine synthesis,h[c] + nadph[c] + o2[c] + sphgn[c] --> h2o[c] + nadp[c] + psphings[c],Other
+PPND2,prephenate dehydrogenase NADP ,nadp[c] + pphn[c] --> 34hpp[c] + co2[c] + nadph[c],Other
+SHK3D,shikimate dehydrogenase,3dhsk[c] + h[c] + nadph[c] --> nadp[c] + skm[c],Other
+SSALy,succinate semialdehyde dehydrogenase NADP ,h2o[c] + nadp[c] + sucsal[c] --> 2.0 h[c] + nadph[c] + succ[c],TCA cycle
+TRDR,thioredoxin reductase NADPH ,h[c] + nadph[c] + trdox[c] --> nadp[c] + trdrd[c],Other
+XYLR,xylose reductase,h[c] + nadph[c] + xyl_D[c] --> nadp[c] + xylt[c],Other
+DECH,decane hydroxylase,decane[c] + h[c] + nadph[c] + o2[c] <=> decanol[c] + h2o[c] + nadp[c],Other
+HDCH,hexadecane hydroxylase,h[c] + hedecane[c] + nadph[c] + o2[c] <=> h2o[c] + hedecanol[c] + nadp[c],Other
+DDCH,dodecane hydroxylase,dodec[c] + h[c] + nadph[c] + o2[c] <=> ddecanol[c] + h2o[c] + nadp[c],Other
+DCAH,decanoate hydroxylase,dca[c] + h[c] + nadph[c] + o2[c] --> dcaol[c] + h2o[c] + nadp[c],Other
+DDCAH,Dodecanoate hydroxylase,ddca[c] + h[c] + nadph[c] + o2[c] --> ddcaol[c] + h2o[c] + nadp[c],Other
+HDCAH,Hexadecanoate hydroxylase,h[c] + hdca[c] + nadph[c] + o2[c] --> h2o[c] + hdcaol[c] + nadp[c],Other
+MTHFD,methylenetetrahydrofolate dehydrogenase NADP ,mlthf[c] + nadp[c] <=> methf[c] + nadph[c],Other
+MTHFR3,5 10 methylenetetrahydrofolatereductase NADPH ,2.0 h[c] + mlthf[c] + nadph[c] --> 5mthf[c] + nadp[c],Other
